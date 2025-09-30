@@ -3,5 +3,11 @@
 /* COLORS */
 @theme {
   --color-brand: #ede8d0;
+  --color-brand-2: #c4c0ab;
+  --color-brand-3: #9d9988;
+  --color-brand-4: #777567;
+  --color-brand-5: #545248;
+  --color-brand-6: #33312b;
+  --color-brand-6: #141410;
   --color-cta: #673de6;
 }

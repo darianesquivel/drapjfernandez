@@ -1,0 +1,144 @@
+<header id="header" class="bg-brand backdrop-blur-md sticky top-0 z-50 h-15">
+  <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="/#" class="flex items-center">
+      <img
+        src="/logo.svg"
+        alt="Bariatrica Integral Logo"
+        class="h-8 md:h-8 w-auto"
+      />
+      <span class="sr-only">Volver a Inicio</span>
+    </a>
+
+    <div class="hidden md:flex items-center space-x-6">
+      <a
+        href="/#"
+        class="text-brand-gray-dark hover:text-brand-blue hover:scale-105 transition-transform duration-300"
+        >Inicio</a
+      >
+      <a
+        href="/#about-me"
+        class="text-brand-gray-dark hover:text-brand-blue hover:scale-105 transition-transform duration-300"
+        >Sobre mi</a
+      >
+      <a
+        href="/#locations"
+        class="text-brand-gray-dark hover:text-brand-blue hover:scale-105 transition-transform duration-300"
+        >Centros</a
+      >
+      <a
+        href="/BariatricPage"
+        class="text-brand-gray-dark hover:text-brand-blue hover:scale-105 transition-transform duration-300"
+        >Cirugia Bariatrica</a
+      >
+      <a
+        href="/GeneralPage"
+        class="text-brand-gray-dark hover:text-brand-blue hover:scale-105 transition-transform duration-300"
+        >Cirugia General</a
+      >
+    </div>
+
+    <a
+      href="/#contact"
+      class="hidden md:block bg-brand-blue text-white font-bold py-1 px-4 rounded-full hover:bg-brand-blue-dark transition-transform duration-300 hover:scale-105 shadow-lg"
+    >
+      Contacto
+    </a>
+
+    <div class="md:hidden">
+      <button
+        id="menu-btn"
+        class="text-brand-gray-dark focus:outline-none"
+        aria-label="Abrir menú principal"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+  >
+    <a
+      href="/#"
+      class="block py-2 px-6 text-sm text-brand-gray-dark hover:bg-brand-gray-light"
+      >Inicio</a
+    >
+    <a
+      href="/#about-me"
+      class="block py-2 px-6 text-sm text-brand-gray-dark hover:bg-brand-gray-light"
+      >Sobre mi</a
+    >
+    <a
+      href="/#locations"
+      class="block py-2 px-6 text-sm text-brand-gray-dark hover:bg-brand-gray-light"
+      >Centros</a
+    >
+    <a
+      href="/BariatricPage"
+      class="block py-2 px-6 text-sm text-brand-gray-dark hover:bg-brand-gray-light"
+      >Cirugia Bariatrica</a
+    >
+    <a
+      href="/GeneralPage"
+      class="block py-2 px-6 text-sm text-brand-gray-dark hover:bg-brand-gray-light"
+      >Cirugia General</a
+    >
+    <div class="p-6">
+      <a
+        href="/#contact"
+        class="w-full text-center block bg-brand-blue text-white font-bold p-1 rounded-full
+         transition-all duration-300 ease-in-out
+         hover:bg-brand-blue-dark hover:scale-105
+         focus:bg-brand-blue-dark focus:scale-105
+         active:bg-brand-blue-dark active:scale-105 shadow-lg"
+      >
+        Contacto
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  function toggleMobileMenu() {
+    const isExpanded = menu?.classList.contains("max-h-0");
+
+    if (isExpanded) {
+      menu?.classList.remove("max-h-0", "opacity-0");
+      menu?.classList.add("max-h-screen", "opacity-100");
+      btn?.setAttribute("aria-expanded", "true");
+      btn?.setAttribute("aria-label", "Cerrar menú principal");
+    } else {
+      menu?.classList.remove("max-h-screen", "opacity-100");
+      menu?.classList.add("max-h-0", "opacity-0");
+      btn?.setAttribute("aria-expanded", "false");
+      btn?.setAttribute("aria-label", "Abrir menú principal");
+    }
+  }
+
+  btn?.addEventListener("click", toggleMobileMenu);
+
+  const mobileLinks = document.querySelectorAll("#mobile-menu a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleMobileMenu();
+    });
+  });
+</script>

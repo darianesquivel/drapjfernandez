@@ -1,17 +1,19 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
+import Header from "../sections/Header.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
-<html lang="es" class="h-full">
+<html lang="es" class="h-full scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Dra. Fernandez - Cirugia Bariatrica y General</title>
+    <ClientRouter />
   </head>
-  <body class="flex flex-col h-full">
+  <body>
     <Header />
     <main class="flex-grow">
       <slot />
