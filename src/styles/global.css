@@ -11,3 +11,7 @@
   --color-brand-6: #141410;
   --color-cta: #673de6;
 }
+
+html {
+  scrollbar-gutter: stable;
+}
