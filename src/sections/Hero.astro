@@ -1,44 +1,69 @@
 <section
   id="home"
-  class="min-h-dvh h-dvh bg-brand-gray-light flex items-center -mt-15"
+  class="py-24 md:py-36 lg:py-48 flex flex-col justify-center bg-gray-50 overflow-hidden"
 >
-  <div
-    data-aos="fade-up"
-    class="container mx-auto h-full flex flex-col md:flex-row items-center justify-center"
-  >
-    <div class="md:w-1/2 lg:w-3/5 text-center md:text-left">
-      <p class="text-xl font-semibold text-brand-blue mb-2">
-        Dra. Fernández | Cirugía General y Bariátrica
-      </p>
-
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-blue-dark leading-tight mb-4"
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div
+        class="flex flex-col justify-center text-center md:text-left order-2 md:order-1"
       >
-        Cirugía Integral: Transformando tu Salud y Bienestar.
-      </h1>
-      <p class="text-lg text-brand-gray-dark mb-8 max-w-xl mx-auto md:mx-0">
-        Recupera tu bienestar con un enfoque humano y la más avanzada
-        tecnología. Te acompañamos en cada etapa de tu proceso de Cirugía
-        General o Bariátrica.
-      </p>
-      <a
-        href="https://wa.me/54911xxxxxxxx?text=Hola%21+quiero+mas+información+sobre+el+procedimiento..."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block bg-cta text-white font-bold text-lg py-1 px-4 rounded-full transition-transform duration-300 hover:scale-105 shadow-lg"
-      >
-        Contactame!
-      </a>
-    </div>
+        <p
+          class="font-bold text-xl md:text-2xl text-brand-5 tracking-wide mb-3"
+        >
+          Dra. Fernández | Cirugía General y Bariátrica
+        </p>
 
-    <div
-      class="md:w-1/2 lg:w-2/5 md:ml-12 lg:ml-20 flex flex-col justify-end h-full mt-8 md:mt-0"
-    >
-      <img
-        src="/hero-image.png"
-        alt="Dra. Fernández sonriendo"
-        class="w-full h-auto drop-shadow-2xl rounded-lg mx-auto block max-h-[85vh] object-contain"
-      />
+        <h1
+          class="font-extrabold text-2xl md:text-4xl lg:text-5xl leading-tight text-gray-900 mb-6"
+        >
+          Cirugía Integral: <span class="text-brand-5">Transformando</span> tu Salud
+          y Bienestar.
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-gray-700 max-w-xl mx-auto md:mx-0 mb-8"
+        >
+          Recupera tu bienestar con un enfoque humano y la más avanzada
+          tecnología. Te acompañamos en cada etapa de tu proceso para una
+          Cirugía Segura y Exitosa.
+        </p>
+
+        <a
+          href="https://wa.me/54911xxxxxxxx?text=Hola%21+quiero+mas+información+sobre+el+procedimiento..."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center
+            self-center md:self-start
+            bg-brand-2 text-white
+            font-extrabold text-xl py-3 px-8
+            rounded-full transition-all duration-300
+            hover:bg-brand-5 hover:shadow-xl
+            transform hover:scale-[1.03] shadow-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-3"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            ></path>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+            ></path>
+          </svg>
+          ¡Contáctame por WhatsApp!
+        </a>
+      </div>
+
+      <div class="flex justify-end items-center order-1 md:order-2">
+        <img
+          src="/hero-image.svg"
+          alt="Dra. Fernández, especialista en cirugía general y bariátrica, sonriendo"
+          class="w-full max-w-lg h-auto transform hover:scale-[1.02] transition-transform duration-500"
+          loading="eager"
+        />
+      </div>
     </div>
   </div>
 </section>
