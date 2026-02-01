@@ -1,0 +1,54 @@
+---
+import TreatmentCard from "./TreatmentCard.astro";
+---
+
+<section
+  id="treatments"
+  class="relative py-20 md:py-28 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
+>
+  <!-- decoraciones suaves -->
+  <div
+    class="absolute -top-40 left-1/2 -translate-x-1/2
+           w-[40rem] h-[40rem]
+           bg-brand-3/10 rounded-full blur-3xl"
+  >
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+    <!-- header -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-6">
+        Tratamientos
+      </h2>
+
+      <p class="text-brand-5/70 max-w-2xl mx-auto text-lg">
+        Procedimientos quirúrgicos realizados con un enfoque humano, tecnología
+        de vanguardia y seguimiento personalizado.
+      </p>
+    </div>
+
+    <!-- highlights -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+      <TreatmentCard
+        title="Cirugía General"
+        description="Abordaje quirúrgico integral para el diagnóstico y tratamiento de múltiples patologías, priorizando técnicas seguras y precisas."
+        href="#cirugia-general"
+        image="/icons/general-surgery.png"
+      />
+
+      <TreatmentCard
+        title="Cirugía Bariátrica"
+        description="Tratamientos orientados al control del peso y mejora de la salud metabólica, con acompañamiento médico continuo."
+        href="#cirugia-bariatrica"
+        image="/icons/bariatric-surgery.png"
+      />
+
+      <TreatmentCard
+        title="Cirugía Percutánea"
+        description="Procedimientos mínimamente invasivos que reducen tiempos de recuperación y mejoran la experiencia del paciente."
+        href="#cirugia-percutanea"
+        image="/icons/percutaneous-surgery.png"
+      />
+    </div>
+  </div>
+</section>
