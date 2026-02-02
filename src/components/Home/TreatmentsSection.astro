@@ -3,52 +3,50 @@ import TreatmentCard from "./TreatmentCard.astro";
 ---
 
 <section
-  id="treatments"
-  class="relative py-20 md:py-28 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
+  id="tratamientos"
+  class="relative py-8 md:py-12 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
 >
-  <!-- decoraciones suaves -->
   <div
-    class="absolute -top-40 left-1/2 -translate-x-1/2
-           w-[40rem] h-[40rem]
-           bg-brand-3/10 rounded-full blur-3xl"
+    class="relative max-w-6xl mx-auto px-6 flex flex-col items-center gap-10"
   >
-  </div>
-
-  <div class="relative max-w-6xl mx-auto px-6">
-    <!-- header -->
-    <div class="text-center mb-20">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-6">
+    <div class="text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-4">
         Tratamientos
       </h2>
-
-      <p class="text-brand-5/70 max-w-2xl mx-auto text-lg">
-        Procedimientos quirúrgicos realizados con un enfoque humano, tecnología
-        de vanguardia y seguimiento personalizado.
+      <p class="text-brand-5/70 max-w-xl text-lg">
+        Soluciones quirúrgicas adaptadas a cada paciente, con foco en seguridad,
+        resultados y acompañamiento médico.
       </p>
     </div>
 
-    <!-- highlights -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-      <TreatmentCard
-        title="Cirugía General"
-        description="Abordaje quirúrgico integral para el diagnóstico y tratamiento de múltiples patologías, priorizando técnicas seguras y precisas."
-        href="#cirugia-general"
-        image="/icons/general-surgery.png"
-      />
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-8 items-start">
+      <div class="md:col-span-2 md:mt-32">
+        <TreatmentCard
+          number="01"
+          title="Cirugía General"
+          description="Procedimientos quirúrgicos integrales para el diagnóstico y tratamiento de diversas patologías."
+          href="/cirugia-general"
+        />
+      </div>
 
-      <TreatmentCard
-        title="Cirugía Bariátrica"
-        description="Tratamientos orientados al control del peso y mejora de la salud metabólica, con acompañamiento médico continuo."
-        href="#cirugia-bariatrica"
-        image="/icons/bariatric-surgery.png"
-      />
+      <div class="md:col-span-4 flex flex-col">
+        <TreatmentCard
+          number="02"
+          title="Cirugía Bariátrica"
+          description="Tratamientos especializados para el control del peso y mejora de la salud metabólica, con seguimiento continuo."
+          href="/cirugia-bariatrica"
+          featured
+        />
 
-      <TreatmentCard
-        title="Cirugía Percutánea"
-        description="Procedimientos mínimamente invasivos que reducen tiempos de recuperación y mejoran la experiencia del paciente."
-        href="#cirugia-percutanea"
-        image="/icons/percutaneous-surgery.png"
-      />
+        <div class="mt-8 md:ml-24 max-w-md z-10">
+          <TreatmentCard
+            number="03"
+            title="Cirugía Percutánea"
+            description="Técnicas mínimamente invasivas que reducen el tiempo de recuperación y optimizan resultados."
+            href="/cirugia-percutanea"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>
