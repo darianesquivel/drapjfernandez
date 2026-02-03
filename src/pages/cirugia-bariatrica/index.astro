@@ -2,174 +2,104 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Bariatrica - Dra. Fernandez">
-  <section id="bariatrica" class="py-24 md:py-36 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="font-bold text-xl text-brand-5 tracking-wide mb-3">
-          Cirugía Bariátrica
-        </p>
-        <h2
-          class="font-extrabold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-6"
-        >
-          Procedimientos que <span class="text-brand-5">Transforman Vidas</span>
-        </h2>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-          Técnicas quirúrgicas avanzadas para el tratamiento de la obesidad,
-          diseñadas para ayudarte a alcanzar tus objetivos de salud de forma
-          segura y sostenible.
-        </p>
-      </div>
+<Layout title="Cirugía Bariátrica - Dra. Fernandez">
+  <section class="py-24 md:py-32 bg-gradient-to-b from-brand-1 to-brand-2">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-brand-5 font-semibold tracking-wide mb-3">
+        Cirugía Bariátrica
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1: Manga Gástrica -->
-        <div
-          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div
-            class="h-56 bg-gradient-to-br from-brand-2 to-brand-5 flex items-center justify-center"
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+        Tratamientos quirúrgicos para el control
+        <span class="text-brand-5"> integral de la obesidad</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+        Procedimientos basados en evidencia científica, orientados a mejorar la
+        salud metabólica, la calidad de vida y el bienestar a largo plazo.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gradient-to-b from-brand-2 to-brand-3">
+    <div class="max-w-5xl mx-auto px-6 space-y-20">
+      <article class="grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            Manga Gástrica
+          </h2>
+          <span
+            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-32 w-32 text-white opacity-90"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              ></path>
-            </svg>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-2xl text-gray-900 mb-4">
-              Manga Gástrica
-            </h3>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              Procedimiento que reduce el tamaño del estómago en un 80%,
-              limitando la cantidad de alimentos y generando saciedad temprana.
-              Ideal para pacientes con obesidad severa.
-            </p>
-            <div class="flex items-center text-brand-5 font-semibold">
-              <span class="mr-2">Más información</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-          </div>
+            Procedimiento quirúrgico
+          </span>
         </div>
 
-        <!-- Card 2: Bypass Gástrico -->
-        <div
-          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div
-            class="h-56 bg-gradient-to-br from-brand-5 to-brand-2 flex items-center justify-center"
+        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
+          <p>
+            Técnica quirúrgica que reduce el tamaño del estómago en
+            aproximadamente un 80%, limitando la ingesta de alimentos y
+            favoreciendo una sensación de saciedad temprana.
+          </p>
+          <p>
+            Indicada en pacientes con obesidad severa, ofrece resultados
+            sostenidos en la pérdida de peso y mejora de comorbilidades
+            asociadas.
+          </p>
+        </div>
+      </article>
+
+      <hr class="border-brand-5" />
+
+      <article class="grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            Bypass Gástrico
+          </h2>
+          <span
+            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-32 w-32 text-white opacity-90"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-            </svg>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-2xl text-gray-900 mb-4">
-              Bypass Gástrico
-            </h3>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              Técnica que reduce el estómago y modifica el intestino para
-              limitar absorción de nutrientes. Excelentes resultados en pérdida
-              de peso y control de diabetes tipo 2.
-            </p>
-            <div class="flex items-center text-brand-5 font-semibold">
-              <span class="mr-2">Más información</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-          </div>
+            Procedimiento quirúrgico
+          </span>
         </div>
 
-        <!-- Card 3: Balón Intragástrico -->
-        <div
-          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div
-            class="h-56 bg-gradient-to-br from-brand-2 to-brand-5 flex items-center justify-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-32 w-32 text-white opacity-90"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"
-              ></path>
-            </svg>
-          </div>
-          <div class="p-6">
-            <h3 class="font-bold text-2xl text-gray-900 mb-4">
-              Balón Intragástrico
-            </h3>
-            <p class="text-gray-700 leading-relaxed mb-4">
-              Procedimiento no quirúrgico donde se coloca un balón en el
-              estómago para generar saciedad. Opción temporal y efectiva para
-              iniciar el proceso de pérdida de peso.
-            </p>
-            <div class="flex items-center text-brand-5 font-semibold">
-              <span class="mr-2">Más información</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-          </div>
+        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
+          <p>
+            Cirugía que combina la reducción del estómago con una modificación
+            del tránsito intestinal, disminuyendo la absorción de nutrientes.
+          </p>
+          <p>
+            Es una de las técnicas con mejores resultados en la pérdida de peso
+            y el control de enfermedades metabólicas como la diabetes tipo 2.
+          </p>
         </div>
-      </div>
+      </article>
+
+      <hr class="border-brand-5" />
+
+      <article class="grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            Balón Intragástrico
+          </h2>
+          <span
+            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
+          >
+            Tratamiento no quirúrgico
+          </span>
+        </div>
+
+        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
+          <p>
+            Procedimiento endoscópico en el que se coloca un balón dentro del
+            estómago para generar sensación de saciedad y reducir la ingesta.
+          </p>
+          <p>
+            Es una alternativa temporal indicada para iniciar el descenso de
+            peso o como complemento dentro de un plan integral de tratamiento.
+          </p>
+        </div>
+      </article>
     </div>
   </section>
 </Layout>

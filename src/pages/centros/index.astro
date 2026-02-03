@@ -18,107 +18,65 @@ const locations = [
     details: "Consultorios externos y Guardia de baja complejidad.",
   },
   {
-    name: "Sanatorio Finocchietto",
-    address: "Av. Córdoba 2678, Cdad. Autónoma de Buenos Aires",
-    mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1802081600843!2d-58.40697922376994!3d-34.60372247295804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33532c2560375%3A0x4d07b538f5f65f04!2sSanatorio%20Finochietto!5e0!3m2!1ses-419!2sar!4v1750000000002!5m2!1ses-419!2sar",
-    details: "Centro de alta complejidad en CABA.",
-  },
-  {
-    name: "Instituto IMAC",
-    address: "Av. Díaz Vélez 4363, Cdad. Autónoma de Buenos Aires",
-    mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.1802081600843!2d-58.40697922376994!3d-34.60372247295804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33532c2560375%3A0x4d07b538f5f65f04!2sSanatorio%20Finochietto!5e0!3m2!1ses-419!2sar!4v1750000000003!5m2!1ses-419!2sar", // Placeholder, usar el correcto
-    details: "Clínica/Instituto de la Ciudad de Buenos Aires.",
-  },
-  {
-    name: "Clínica del Sol",
-    address: "Buenos Aires 660, General Pacheco, Tigre",
-    mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.47154238543!2d-58.60196232378876!3d-34.46747225244585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bda61c8b3684a7%3A0xa9719f9f957c5e2d!2sCentro%20M%C3%A9dico%20del%20Sol!5e0!3m2!1ses-419!2sar!4v1750000000004!5m2!1ses-419!2sar",
-    details: "Atención médica ambulatoria en General Pacheco.",
-  },
-  {
-    name: "Hospital Bocalandro",
-    address: "Ruta 8 Km. 20,5 N° 9100, Loma Hermosa, Tres de Febrero",
-    mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4735520777555!2d-58.60091302376884!3d-34.62193505671191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbc1e57c66a4f%3A0x889a9f9c75463f82!2sHospital%20Zonal%20General%20de%20Agudos%20%E2%80%9CDr.%20C.%20A.%20Bocalandro%E2%80%9D!5e0!3m2!1ses-419!2sar!4v1750000000005!5m2!1ses-419!2sar",
-    details: "Hospital Zonal General de Agudos. (Ámbito Público)",
-  },
-  {
     name: "Clínica Ángelus",
     address: "Av Fondo de la Legua 390, San Isidro",
     mapEmbedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.745672224724!2d-58.5539423237748!3d-34.53671755562137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb8603ed6127%3A0xb355d91113b83870!2sAv.%20Diego%20Carman%20555%2C%20San%20Isidro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750000000006!5m2!1ses-419!2sar", // Placeholder, usar el correcto
     details: "Consultorios y prácticas médicas en zona norte.",
   },
-  {
-    name: "Sanatorio Las Lomas Hills",
-    address: "Av. Fondo de la Legua 35, San Isidro, Buenos Aires",
-    mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.745672224724!2d-58.5539423237748!3d-34.53671755562137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb8603ed6127%3A0xb355d91113b83870!2sAv.%20Diego%20Carman%20555%2C%20San%20Isidro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750000000007!5m2!1ses-419!2sar", // Placeholder, usar el correcto
-    details: "Consultorios y Hospital de Día.",
-  },
-  {
-    name: "Clínica Providencia",
-    address:
-      "Ubicación no confirmada en Buenos Aires (resultados de Chile/México).",
-    mapEmbedSrc: "",
-    details: "Por favor, verificar la dirección exacta de la sede de atención.",
-    unavailable: true,
-  },
 ];
 ---
 
 <Layout title="Centros - Dra. Fernandez">
-  <section id="locations" class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2
-        class="text-4xl md:text-5xl font-extrabold text-center text-brand-blue mb-4"
-      >
-        Lugares de Atención
-      </h2>
-      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-        La Dra. atiende en las siguientes instituciones. Consulta tu centro más
-        cercano.
-      </p>
+  <section
+    id="locations"
+    class="py-20 md:py-28 bg-gradient-to-b from-brand-1 to-brand-2"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <header class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-4">
+          Lugares de Atención
+        </h2>
+        <p class="max-w-2xl mx-auto text-lg text-brand-4">
+          Centros médicos donde realizo procedimientos quirúrgicos.
+        </p>
+      </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {
           locations.map((loc, index) => (
-            <div
+            <article
               data-aos="fade-up"
               data-aos-delay={100 + index * 100}
-              class="bg-brand-gray-light rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              class="flex flex-col bg-white/80 backdrop-blur
+                   border border-black/5
+                   rounded-2xl overflow-hidden
+                   transition-all duration-300
+                   hover:shadow-xl"
             >
-              <div class="p-6 text-center">
-                <h3 class="text-xl font-bold text-brand-blue-dark mb-2">
-                  {loc.name}
-                </h3>
-                <p class="text-brand-gray-dark mb-4">{loc.address}</p>
-                <p class="text-sm italic text-gray-500">{loc.details}</p>
+              {/* mapa */}
+              <div class="h-56 w-full">
+                <iframe
+                  title={`Mapa de ${loc.name}`}
+                  src={loc.mapEmbedSrc}
+                  class="w-full h-full"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                />
               </div>
 
-              {loc.mapEmbedSrc ? (
-                <div class="w-full h-64 md:h-80">
-                  <iframe
-                    title={`Mapa de ${loc.name}`}
-                    class="w-full h-full"
-                    src={loc.mapEmbedSrc}
-                    style="border:0;"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              ) : (
-                <div class="w-full h-64 md:h-80 bg-red-100 flex items-center justify-center p-4">
-                  <p class="text-center text-red-700 font-semibold">
-                    🔴 {loc.address}
-                  </p>
-                </div>
-              )}
-            </div>
+              {/* info */}
+              <div class="p-6 flex flex-col gap-3">
+                <h3 class="text-xl font-bold text-brand-blue-dark leading-tight">
+                  {loc.name}
+                </h3>
+
+                <p class="text-sm text-gray-600">{loc.address}</p>
+
+                <p class="text-sm text-gray-500 italic">{loc.details}</p>
+              </div>
+            </article>
           ))
         }
       </div>
