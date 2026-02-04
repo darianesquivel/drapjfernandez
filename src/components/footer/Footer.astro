@@ -1,16 +1,64 @@
-<footer class="bg-brand py-10 px-10">
-  <div class="mt-8 text-center text-xs text-text-inverted">
-    © {new Date().getFullYear()} Dra. Pamela J. Fernandez. Todos los derechos reservados.
-  </div>
-  <p class="text-center text-xs text-brand-5/60">
-    Creado por
-    <a
-      href="https://justdarian.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="font-semibold text-brand-5 hover:underline"
+<footer class="bg-brand py-12 px-6 border-t border-white/5">
+  <div
+    class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+  >
+    <div class="flex flex-col items-center md:items-start">
+      <a href="/" title="Dra. Pamela J. Fernandez" class="mb-4">
+        <img
+          src="/logo.svg"
+          alt="Dra. Pamela J. Fernandez - Cirujana General y Bariátrica"
+          class="h-10 w-auto"
+          loading="lazy"
+          width="180"
+          height="40"
+        />
+      </a>
+      <p class="text-brand-5/80 text-sm max-w-xs text-center md:text-left">
+        Especialista en Cirugía General, Bariátrica y Percutánea. MN 167712 / MP
+        456054.
+      </p>
+    </div>
+
+    <nav
+      class="flex flex-wrap justify-center gap-6 text-brand-5 font-bold uppercase text-xs"
+      aria-label="Navegación secundaria"
     >
-      justdarian.com
-    </a>
-  </p>
+      <a href="/#home" class="hover:text-secondary transition-colors">Inicio</a>
+      <a href="/#sobre-mi" class="hover:text-secondary transition-colors"
+        >Sobre mi</a
+      >
+      <a href="/centros" class="hover:text-secondary transition-colors"
+        >Centros</a
+      >
+      <a href="/#tratamientos" class="hover:text-secondary transition-colors"
+        >Tratamientos</a
+      >
+      <a href="#contact" class="hover:text-secondary transition-colors"
+        >Contacto</a
+      >
+    </nav>
+  </div>
+
+  <div
+    class="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+  >
+    <div
+      class="text-center md:text-left text-[10px] md:text-xs text-brand-5/60"
+    >
+      © {new Date().getFullYear()} Dra. Pamela J. Fernandez. Todos los derechos reservados.
+    </div>
+
+    <p class="text-[10px] md:text-xs text-brand-5/60">
+      Diseño y Desarrollo por
+      <a
+        href="https://justdarian.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Just Darian - Desarrollo Web"
+        class="font-semibold text-brand-5 hover:text-secondary transition-colors"
+      >
+        justdarian.com
+      </a>
+    </p>
+  </div>
 </footer>

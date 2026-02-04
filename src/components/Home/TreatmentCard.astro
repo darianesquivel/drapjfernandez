@@ -4,6 +4,8 @@ const { number, title, description, href, featured = false } = Astro.props;
 
 <a
   href={href}
+  title={`Saber más sobre ${title}`}
+  aria-label={`Ver información detallada sobre ${title}`}
   class={`group relative block rounded-3xl p-8 md:p-10
           transition-all duration-300
           ${
@@ -11,10 +13,11 @@ const { number, title, description, href, featured = false } = Astro.props;
               ? "bg-brand-5 text-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.4)]"
               : "bg-white text-brand-5 border border-brand-5/10"
           }
-          hover:-translate-y-2`}
+          hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-brand-4`}
 >
   <span
-    class={`absolute top-6 right-8 text-6xl font-extrabold
+    aria-hidden="true"
+    class={`absolute top-6 right-8 text-6xl font-extrabold select-none
             ${featured ? "text-white/20" : "text-brand-5/10"}`}
   >
     {number}
@@ -35,9 +38,12 @@ const { number, title, description, href, featured = false } = Astro.props;
   </p>
 
   <div
-    class={`mt-6 text-sm font-semibold tracking-wide
+    class={`mt-6 text-sm font-semibold tracking-wide flex items-center gap-1
             ${featured ? "text-white/80" : "text-brand-5/60"}`}
   >
-    Ver más →
+    Ver más <span
+      class="transition-transform duration-300 group-hover:translate-x-1"
+      aria-hidden="true">→</span
+    >
   </div>
 </a>

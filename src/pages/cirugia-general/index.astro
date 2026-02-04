@@ -2,44 +2,164 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Cirugía General - Dra. Fernandez">
-  <section class="py-24 md:py-32 bg-gradient-to-b from-brand-1 to-brand-2">
+<Layout title="Cirugía General y Laparoscópica | Dra. Pamela J. Fernandez">
+  <section class="pt-20 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <p class="text-brand-5 font-semibold tracking-wide mb-3">
-        Cirugía General
+      <p
+        data-aos="fade-up"
+        class="text-brand-5 font-semibold tracking-wide mb-3 uppercase text-sm"
+      >
+        Especialidad en Cirugía General
       </p>
 
-      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+      <h2
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+      >
         Tratamiento quirúrgico integral
         <span class="text-brand-5"> con criterio médico</span>
-      </h1>
+      </h2>
 
-      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+      >
         Abordaje quirúrgico de patologías frecuentes y complejas, con técnicas
-        actualizadas, mínima invasión y seguimiento personalizado.
+        actualizadas, mínima invasión y seguimiento personalizado liderado por
+        la Dra. Pamela J. Fernandez.
       </p>
     </div>
   </section>
 
-  <section class="py-24 bg-gradient-to-b from-brand-2 to-brand-3">
-    <div class="max-w-5xl mx-auto px-6 space-y-20">
-      <article class="grid md:grid-cols-3 gap-8 items-start">
-        <div>
+  <section class="py-10 relative bg-brand overflow-hidden">
+    <img
+      src="/wave1.svg"
+      alt=""
+      role="presentation"
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    />
+
+    <div class="relative max-w-6xl mx-auto px-6 space-y-16 z-10">
+      <div class="flex flex-col items-center gap-8">
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="text-3xl md:text-4xl font-bold text-gray-900 text-center"
+        >
+          Cirugía <span class="text-brand-5">adaptada</span> a cada paciente
+        </h2>
+
+        <p
+          data-aos="fade-up"
+          data-aos-delay="400"
+          class="text-lg text-center text-gray-700 leading-relaxed max-w-4xl"
+        >
+          La cirugía general permite abordar múltiples patologías mediante
+          diferentes técnicas quirúrgicas, seleccionadas de forma individual
+          según cada caso clínico y las necesidades del paciente.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-2 gap-10"
+      >
+        <article
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100"
+        >
+          <h3 class="text-2xl font-bold text-gray-900">
+            Cirugía laparoscópica
+          </h3>
+
+          <p class="text-gray-700 leading-relaxed">
+            Técnica de mínima invasión que se realiza a través de pequeñas
+            incisiones, utilizando una cámara y material quirúrgico específico
+            para abordar la patología de forma precisa.
+          </p>
+
+          <ul class="space-y-2 text-gray-700 font-medium">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Menor impacto quirúrgico
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Disminución del dolor postoperatorio
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Menor tiempo de internación
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Recuperación más rápida
+            </li>
+          </ul>
+        </article>
+
+        <article
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100"
+        >
+          <h3 class="text-2xl font-bold text-gray-900">Cirugía abierta</h3>
+
+          <p class="text-gray-700 leading-relaxed">
+            Indicada en situaciones que requieren un abordaje quirúrgico
+            convencional, ya sea por la complejidad del cuadro clínico o por
+            características particulares del paciente.
+          </p>
+
+          <ul class="space-y-2 text-gray-700 font-medium">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Abordaje directo y seguro
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Indicada en cuadros complejos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Precisión técnica y control quirúrgico
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-5">•</span> Mismo enfoque de cuidado integral
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        class="text-center text-gray-700 leading-relaxed max-w-3xl mx-auto"
+      >
+        <p>
+          Cada procedimiento se planifica de manera individual, con evaluación
+          clínica completa y seguimiento en el pre y postoperatorio, priorizando
+          siempre la seguridad y los mejores resultados funcionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 bg-gradient-to-b from-brand-2 to-brand-3">
+    <div data-aos="fade-up" class="max-w-5xl mx-auto px-6 space-y-20">
+      <article
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+      >
+        <header>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Colecistectomía
           </h2>
-          <span
-            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
-          >
-            Cirugía laparoscópica
-          </span>
-        </div>
+          <p class="text-brand-5 text-sm font-bold uppercase tracking-wider">
+            Vesícula biliar
+          </p>
+        </header>
 
-        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
+        <div
+          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+        >
           <p>
             Extracción de la vesícula biliar mediante técnica laparoscópica,
-            indicada en pacientes con cálculos biliares u otras patologías
-            vesiculares.
+            indicada en pacientes con cálculos biliares (litiasis) u otras
+            patologías vesiculares.
           </p>
           <p>
             Procedimiento mínimamente invasivo que permite una recuperación
@@ -48,80 +168,31 @@ import Layout from "../../layouts/Layout.astro";
         </div>
       </article>
 
-      <hr class="border-brand-5" />
+      <hr class="border-brand-5/30" />
 
-      <article class="grid md:grid-cols-3 gap-8 items-start">
-        <div>
+      <article
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+      >
+        <header>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Reparación de Hernias
+            Reparación de hernias
           </h2>
-          <span
-            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
-          >
-            Cirugía programada
-          </span>
-        </div>
+          <p class="text-brand-5 text-sm font-bold uppercase tracking-wider">
+            Pared abdominal
+          </p>
+        </header>
 
-        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
+        <div
+          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+        >
           <p>
             Tratamiento quirúrgico de hernias inguinales, umbilicales e
             incisionales mediante técnicas abiertas o laparoscópicas.
           </p>
           <p>
-            Se utilizan mallas de refuerzo cuando está indicado, optimizando los
-            resultados y reduciendo el riesgo de recurrencia.
-          </p>
-        </div>
-      </article>
-
-      <hr class="border-brand-5" />
-
-      <article class="grid md:grid-cols-3 gap-8 items-start">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Apendicectomía
-          </h2>
-          <span
-            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
-          >
-            Cirugía de urgencia
-          </span>
-        </div>
-
-        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
-          <p>
-            Procedimiento quirúrgico para el tratamiento de la apendicitis
-            aguda, realizado en la mayoría de los casos por vía laparoscópica.
-          </p>
-          <p>
-            Permite una recuperación segura y una pronta reintegración a las
-            actividades habituales.
-          </p>
-        </div>
-      </article>
-
-      <hr class="border-brand-5" />
-
-      <article class="grid md:grid-cols-3 gap-8 items-start">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Cirugía de Tiroides
-          </h2>
-          <span
-            class="text-sm font-semibold text-brand-5 uppercase tracking-wide"
-          >
-            Cirugía especializada
-          </span>
-        </div>
-
-        <div class="md:col-span-2 text-gray-700 leading-relaxed space-y-4">
-          <p>
-            Tiroidectomía parcial o total indicada en el tratamiento de nódulos,
-            bocio multinodular o patología oncológica.
-          </p>
-          <p>
-            Cirugía realizada con especial cuidado en la preservación de
-            estructuras nobles, priorizando seguridad y resultados funcionales.
+            Se utilizan mallas de refuerzo de última generación cuando está
+            indicado, optimizando los resultados y reduciendo significativamente
+            el riesgo de recurrencia.
           </p>
         </div>
       </article>

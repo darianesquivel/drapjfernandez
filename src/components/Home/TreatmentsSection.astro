@@ -4,23 +4,36 @@ import TreatmentCard from "./TreatmentCard.astro";
 
 <section
   id="tratamientos"
-  class="relative py-8 md:py-12 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
+  class="relative py-12 lg:py-20 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
 >
   <div
     class="relative max-w-6xl mx-auto px-6 flex flex-col items-center gap-10"
   >
     <div class="text-center">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-4">
-        Tratamientos
+      <h2
+        data-aos="fade-up"
+        class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-4"
+      >
+        Especialidades y Tratamientos
       </h2>
-      <p class="text-brand-5/70 max-w-xl text-lg">
+      <p
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="text-brand-5/70 max-w-xl text-lg"
+      >
         Soluciones quirúrgicas adaptadas a cada paciente, con foco en seguridad,
-        resultados y acompañamiento médico.
+        resultados y acompañamiento médico personalizado.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-8 items-start">
-      <div class="md:col-span-2 md:mt-32">
+    <div
+      class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-6 gap-8 items-start w-full"
+    >
+      <div
+        data-aos="flip-left"
+        data-aos-delay="200"
+        class="[@media(min-width:1000px)]:col-span-2 [@media(min-width:1000px)]:mt-32"
+      >
         <TreatmentCard
           number="01"
           title="Cirugía General"
@@ -29,16 +42,22 @@ import TreatmentCard from "./TreatmentCard.astro";
         />
       </div>
 
-      <div class="md:col-span-4 flex flex-col">
-        <TreatmentCard
-          number="02"
-          title="Cirugía Bariátrica"
-          description="Tratamientos especializados para el control del peso y mejora de la salud metabólica, con seguimiento continuo."
-          href="/cirugia-bariatrica"
-          featured
-        />
+      <div class="[@media(min-width:1000px)]:col-span-4 flex flex-col gap-8">
+        <div data-aos="flip-right" data-aos-delay="300">
+          <TreatmentCard
+            number="02"
+            title="Cirugía Bariátrica"
+            description="Tratamientos especializados para el control del peso y mejora de la salud metabólica, con seguimiento continuo."
+            href="/cirugia-bariatrica"
+            featured
+          />
+        </div>
 
-        <div class="mt-8 md:ml-24 max-w-md z-10">
+        <div
+          data-aos="flip-left"
+          data-aos-delay="400"
+          class="[@media(min-width:1000px)]:ml-24 [@media(min-width:1000px)]:max-w-md z-10"
+        >
           <TreatmentCard
             number="03"
             title="Cirugía Percutánea"

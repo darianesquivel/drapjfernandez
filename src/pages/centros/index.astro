@@ -8,56 +8,111 @@ const locations = [
     address: "Av. Diego Carman 555, San Isidro, Buenos Aires",
     mapEmbedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.745672224724!2d-58.5539423237748!3d-34.53671755562137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb8603ed6127%3A0xb355d91113b83870!2sAv.%20Diego%20Carman%20555%2C%20San%20Isidro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750000000000!5m2!1ses-419!2sar",
-    details: "Sede principal con Internación, Quirófanos y Guardia.",
+    details: "Sede principal con internación, quirófanos y guardia.",
   },
   {
     name: "Sanatorio Las Lomas Nordelta",
     address: "Av. de los Lagos 6785, Tigre, Buenos Aires",
     mapEmbedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.687445903964!2d-58.65780522379377!3d-34.41018265147551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bda47d2a57173d%3A0x7d27e2a9b3a62858!2sSanatorio%20Las%20Lomas%20Nordelta!5e0!3m2!1ses-419!2sar!4v1750000000001!5m2!1ses-419!2sar",
-    details: "Consultorios externos y Guardia de baja complejidad.",
+    details: "Consultorios externos y guardia de baja complejidad.",
   },
   {
     name: "Clínica Ángelus",
-    address: "Av Fondo de la Legua 390, San Isidro",
+    address: "Av. Fondo de la Legua 390, San Isidro",
     mapEmbedSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.745672224724!2d-58.5539423237748!3d-34.53671755562137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb8603ed6127%3A0xb355d91113b83870!2sAv.%20Diego%20Carman%20555%2C%20San%20Isidro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750000000006!5m2!1ses-419!2sar", // Placeholder, usar el correcto
-    details: "Consultorios y prácticas médicas en zona norte.",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.745672224724!2d-58.5539423237748!3d-34.53671755562137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbb8603ed6127%3A0xb355d91113b83870!2sAv.%20Diego%20Carman%20555%2C%20San%20Isidro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750000000006!5m2!1ses-419!2sar",
+    details: "Consultorios y prácticas médicas en Zona Norte.",
+  },
+];
+
+const locationsV2 = [
+  {
+    name: "IMAC",
+    address: "Av. Díaz Vélez 4363, CABA",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3253.895643867169!2d-58.43104792415766!3d-34.60855225775365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb8e2220cfff%3A0x2ebb7dee93cb3df9!2sInstituto%20Medico%20de%20Alta%20Complejidad%20IMAC!5e1!3m2!1ses!2sar!4v1770142438189!5m2!1ses!2sar",
+    details:
+      "Centro médico especializado en diagnóstico y prácticas ambulatorias.",
+  },
+  {
+    name: "Clínica del Sol",
+    address: "Av. Cnel. Díaz 2211, CABA",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26031.17816056826!2d-58.44907258957965!3d-34.60851076249359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca82f25717f3%3A0xfd421006c97049e3!2sCl%C3%ADnica%20del%20Sol!5e1!3m2!1ses!2sar!4v1770142658175!5m2!1ses!2sar",
+    details: "Institución médica con servicios quirúrgicos y de internación.",
+  },
+  {
+    name: "Sanatorio Finochietto",
+    address: "Av. Córdoba 2678, CABA",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.2945088887795!2d-58.40772357415806!3d-34.598373257216075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33325307d1747%3A0xfc4bcadb57bdd48b!2sSanatorio%20Finochietto!5e1!3m2!1ses!2sar!4v1770143670177!5m2!1ses!2sar",
+    details: "Centro de alta complejidad con tecnología de vanguardia.",
+  },
+  {
+    name: "Clínica Providencia",
+    address: "Tucumán 1863, CABA",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.1553429558203!2d-58.396127624157984!3d-34.60192505740362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac0165c0a3f%3A0xde21eb181321850c!2sSanatorio%20de%20la%20Providencia!5e1!3m2!1ses!2sar!4v1770143794728!5m2!1ses!2sar",
+    details: "Atención médica integral y prácticas quirúrgicas.",
+  },
+  {
+    name: "Hospital Bocalandro",
+    address: "Colectora Av. Eva Perón, Loma Hermosa, Provincia de Buenos Aires",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.675837167037!2d-58.60265510000001!3d-34.563101599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb97fb25cf9bb%3A0xf6803cc4a2496f7!2sHospital%20Dr.%20Carlos%20Bocalandro!5e1!3m2!1ses!2sar!4v1770144070799!5m2!1ses!2sar",
+    details: "Hospital público de referencia con atención quirúrgica.",
+  },
+  {
+    name: "Las Lomas Hills",
+    address: "Av. Fondo de la Legua 35, Gran Buenos Aires",
+    mapEmbedSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.342983459287!2d-58.55381002416296!3d-34.494907751759975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0771193739b%3A0x262a325b2ac35920!2sSanatorio%20Las%20Lomas%20%7C%20Sede%20Hills%20(Fdo%20Legua%2035)!5e1!3m2!1ses!2sar!4v1770144189247!5m2!1ses!2sar",
+    details: "Centro médico moderno en Zona Norte.",
   },
 ];
 ---
 
-<Layout title="Centros - Dra. Fernandez">
+<Layout title="Sedes y Centros de Atención | Dra. Pamela J. Fernandez">
   <section
     id="locations"
-    class="py-20 md:py-28 bg-gradient-to-b from-brand-1 to-brand-2"
+    class="py-20 lg:py-28 bg-gradient-to-b from-brand-1 to-brand-2"
   >
-    <div class="max-w-6xl mx-auto px-6">
-      <header class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-4">
+    <div class="max-w-6xl py-10 mx-auto px-6 flex flex-col gap-10">
+      <header class="text-center flex flex-col gap-4">
+        <h2
+          data-aos="fade-up"
+          class="text-4xl md:text-5xl font-extrabold text-brand-5"
+        >
           Lugares de Atención
         </h2>
-        <p class="max-w-2xl mx-auto text-lg text-brand-4">
-          Centros médicos donde realizo procedimientos quirúrgicos.
+        <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="max-w-2xl mx-auto text-lg text-brand-4"
+        >
+          Centros médicos de alta complejidad donde la Dra. Pamela J. Fernandez
+          realiza sus procedimientos quirúrgicos.
         </p>
       </header>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-12"
+      >
         {
           locations.map((loc, index) => (
             <article
               data-aos="fade-up"
-              data-aos-delay={100 + index * 100}
+              data-aos-delay="200"
               class="flex flex-col bg-white/80 backdrop-blur
                    border border-black/5
                    rounded-2xl overflow-hidden
                    transition-all duration-300
                    hover:shadow-xl"
             >
-              {/* mapa */}
-              <div class="h-56 w-full">
+              <div class="h-56 w-full bg-gray-100">
                 <iframe
-                  title={`Mapa de ${loc.name}`}
+                  title={`Ubicación de ${loc.name}`}
                   src={loc.mapEmbedSrc}
                   class="w-full h-full"
                   style="border:0;"
@@ -66,15 +121,63 @@ const locations = [
                 />
               </div>
 
-              {/* info */}
               <div class="p-6 flex flex-col gap-3">
-                <h3 class="text-xl font-bold text-brand-blue-dark leading-tight">
+                <h2 class="text-xl font-bold text-brand-5 leading-tight">
+                  {loc.name}
+                </h2>
+                <p class="text-sm text-gray-600 font-medium">{loc.address}</p>
+                <p class="text-sm text-gray-500 italic leading-relaxed">
+                  {loc.details}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="max-w-6xl py-10 mx-auto px-6 flex flex-col gap-10">
+      <header class="text-center flex flex-col gap-4">
+        <h2
+          data-aos="fade-up"
+          class="text-2xl md:text-3xl font-extrabold text-brand-5"
+        >
+          Otros centros de atención con mi equipo
+        </h2>
+      </header>
+      <div
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-12"
+      >
+        {
+          locationsV2.map((loc, index) => (
+            <article
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="flex flex-col bg-white/80 backdrop-blur
+                   border border-black/5
+                   rounded-2xl overflow-hidden
+                   transition-all duration-300
+                   hover:shadow-xl"
+            >
+              <div class="h-56 w-full bg-gray-100">
+                <iframe
+                  title={`Mapa interactivo de ${loc.name}`}
+                  src={loc.mapEmbedSrc}
+                  class="w-full h-full"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                />
+              </div>
+
+              <div class="p-6 flex flex-col gap-3">
+                <h3 class="text-xl font-bold text-brand-5 leading-tight">
                   {loc.name}
                 </h3>
-
-                <p class="text-sm text-gray-600">{loc.address}</p>
-
-                <p class="text-sm text-gray-500 italic">{loc.details}</p>
+                <p class="text-sm text-gray-600 font-medium">{loc.address}</p>
+                <p class="text-sm text-gray-500 italic leading-relaxed">
+                  {loc.details}
+                </p>
               </div>
             </article>
           ))
