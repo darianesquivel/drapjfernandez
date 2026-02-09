@@ -5,15 +5,8 @@ import Layout from "../../layouts/Layout.astro";
 <Layout
   title="Cirugía Bariátrica y Tratamiento de la Obesidad | Dra. Pamela J. Fernandez"
 >
-  <section class="pt-20 bg-brand">
+  <section class="md:pt-40 pt-25 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <p
-        data-aos="fade-up"
-        class="text-brand-5 font-semibold tracking-wide mb-3 uppercase text-sm"
-      >
-        Especialidad en Cirugía Bariátrica
-      </p>
-
       <h2
         data-aos="fade-up"
         class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
@@ -68,45 +61,45 @@ import Layout from "../../layouts/Layout.astro";
         </h3>
 
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1000px)]:grid-cols-4 gap-8 w-full"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mx-auto"
         >
-          <article
+          <div
             data-aos="fade-up"
-            class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100"
+            class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <h4 class="font-bold text-lg text-gray-900">
               Dra. Pamela Fernández
             </h4>
             <p class="text-sm font-semibold text-brand-5">Médica Cirujana</p>
-          </article>
+          </div>
 
-          <article
+          <div
             data-aos="fade-up"
-            class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100"
+            class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <h4 class="font-bold text-lg text-gray-900">Dr. Lucas Travieso</h4>
             <p class="text-sm font-semibold text-brand-5">Médico Cirujano</p>
-          </article>
+          </div>
 
-          <article
+          <div
             data-aos="fade-up"
-            class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100"
+            class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <h4 class="font-bold text-lg text-gray-900">
               Lic. Fernanda González
             </h4>
             <p class="text-sm font-semibold text-brand-5">Nutricionista</p>
-          </article>
+          </div>
 
-          <article
+          <div
             data-aos="fade-up"
-            class="rounded-2xl bg-white p-6 shadow-sm hover:shadow-lg transition-all border border-gray-100"
+            class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <h4 class="font-bold text-lg text-gray-900">
               Lic. Natalia Beitone
             </h4>
             <p class="text-sm font-semibold text-brand-5">Psicóloga</p>
-          </article>
+          </div>
         </div>
       </div>
 
@@ -115,30 +108,32 @@ import Layout from "../../layouts/Layout.astro";
           Especialidades de apoyo
         </h3>
 
-        <div class="flex flex-wrap items-center justify-center gap-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mx-auto"
+        >
           <div
-            class="rounded-2xl bg-white/50 backdrop-blur-sm p-6 shadow-sm border border-gray-100 text-center min-w-[200px]"
+            class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <p class="font-semibold text-gray-900">Dra. Lucía Domingo</p>
             <p class="text-sm text-gray-700">Ginecología</p>
           </div>
 
           <div
-            class="rounded-2xl bg-white/50 backdrop-blur-sm p-6 shadow-sm border border-gray-100 text-center min-w-[200px]"
+            class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <p class="font-semibold text-gray-900">Dra. Adriana Fiore</p>
             <p class="text-sm text-gray-700">Clínica Médica y Endocrinología</p>
           </div>
 
           <div
-            class="rounded-2xl bg-white/50 backdrop-blur-sm p-6 shadow-sm border border-gray-100 text-center min-w-[200px]"
+            class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <p class="font-semibold text-gray-900">Dra. Estrella Garofalo</p>
             <p class="text-sm text-gray-700">Psiquiatría</p>
           </div>
 
           <div
-            class="rounded-2xl bg-white/50 backdrop-blur-sm p-6 shadow-sm border border-gray-100 text-center min-w-[200px]"
+            class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
             <p class="font-semibold text-gray-900">Dra. Marcela Deleu</p>
             <p class="text-sm text-gray-700">Cardiología</p>
@@ -148,25 +143,27 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-10 bg-gradient-to-b from-brand-2 to-brand-3">
+  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-3">
     <div class="max-w-5xl mx-auto px-6 space-y-20">
       <article
         data-aos="fade-up"
-        class="grid [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid gap-8 items-center text-center
+               [@media(min-width:1000px)]:grid-cols-3
+               [@media(min-width:1000px)]:items-start
+               [@media(min-width:1000px)]:text-left"
       >
-        <header>
+        <header class="space-y-2">
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
             Tratamiento farmacológico
           </h2>
-          <p
-            class="text-sm font-bold text-brand-5 uppercase tracking-wide mt-2"
-          >
+          <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
             Abordaje médico
           </p>
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 space-y-4 text-gray-700 leading-relaxed"
+          class="space-y-4 text-gray-700 leading-relaxed
+                 [@media(min-width:1000px)]:col-span-2"
         >
           <p>
             Indicado en pacientes seleccionados, el tratamiento farmacológico
@@ -188,32 +185,53 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid gap-8 items-center text-center
+               [@media(min-width:1000px)]:grid-cols-3
+               [@media(min-width:1000px)]:items-start
+               [@media(min-width:1000px)]:text-left"
       >
-        <header>
+        <header class="space-y-2">
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
             Tratamiento endoscópico
           </h2>
-          <p
-            class="text-sm font-bold text-brand-5 uppercase tracking-wide mt-2"
-          >
+          <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
             Procedimiento no quirúrgico
           </p>
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 space-y-4 text-gray-700 leading-relaxed"
+          class="space-y-6 text-gray-700 leading-relaxed
+                 [@media(min-width:1000px)]:col-span-2"
         >
           <p>
-            El <strong>balón intragástrico</strong> endoscópico es un procedimiento
-            mínimamente invasivo que consiste en la colocación de un dispositivo dentro
-            del estómago para generar saciedad y reducir la ingesta calórica.
+            Los procedimientos endoscópicos son intervenciones mínimamente
+            invasivas que se realizan a través de la boca, sin incisiones
+            externas. Son ideales para pacientes que buscan una alternativa
+            efectiva a la cirugía o que se encuentran en rangos de sobrepeso y
+            obesidad leve a moderada.
           </p>
-          <p>
-            Está indicado como tratamiento temporal o como parte de un plan
-            integral de descenso de peso, siempre acompañado de seguimiento
-            médico y nutricional continuo.
-          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="bg-white/40 p-4 rounded-xl">
+              <h3 class="font-bold text-gray-900 mb-2">Balón gástrico</h3>
+              <p class="text-sm text-gray-600">
+                Colocación temporal de un dispositivo inflable en el estómago
+                que genera saciedad precoz y ayuda a reeducar hábitos
+                alimentarios.
+              </p>
+            </div>
+
+            <div class="bg-white/40 p-4 rounded-xl">
+              <h3 class="font-bold text-gray-900 mb-2">
+                Manga gástrica endoscópica
+              </h3>
+              <p class="text-sm text-gray-600">
+                Conocida como <strong>Endosleeve</strong>, consiste en realizar
+                suturas internas en el estómago para reducir su capacidad sin
+                necesidad de cirugía.
+              </p>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -221,21 +239,23 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid gap-8 items-center text-center
+               [@media(min-width:1000px)]:grid-cols-3
+               [@media(min-width:1000px)]:items-start
+               [@media(min-width:1000px)]:text-left"
       >
-        <header>
+        <header class="space-y-2">
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
             Tratamiento quirúrgico
           </h2>
-          <p
-            class="text-sm font-bold text-brand-5 uppercase tracking-wide mt-2"
-          >
+          <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
             Cirugía bariátrica
           </p>
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 space-y-6 text-gray-700 leading-relaxed"
+          class="space-y-6 text-gray-700 leading-relaxed
+                 [@media(min-width:1000px)]:col-span-2"
         >
           <p>
             La cirugía bariátrica es la opción más efectiva para pacientes con
@@ -251,6 +271,7 @@ import Layout from "../../layouts/Layout.astro";
                 ingesta y regulando hormonas del hambre.
               </p>
             </div>
+
             <div class="bg-white/40 p-4 rounded-xl">
               <h3 class="font-bold text-gray-900 mb-2">Bypass gástrico</h3>
               <p class="text-sm text-gray-600">
@@ -266,21 +287,23 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid gap-8 items-center text-center
+               [@media(min-width:1000px)]:grid-cols-3
+               [@media(min-width:1000px)]:items-start
+               [@media(min-width:1000px)]:text-left"
       >
-        <header>
+        <header class="space-y-2">
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
             Cirugías de revisión
           </h2>
-          <p
-            class="text-sm font-bold text-brand-5 uppercase tracking-wide mt-2"
-          >
+          <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
             Segunda intervención
           </p>
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 space-y-4 text-gray-700 leading-relaxed"
+          class="space-y-4 text-gray-700 leading-relaxed
+                 [@media(min-width:1000px)]:col-span-2"
         >
           <p>
             Indicadas en pacientes que ya cuentan con una cirugía previa y

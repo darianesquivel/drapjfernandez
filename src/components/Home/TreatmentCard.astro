@@ -1,19 +1,13 @@
 ---
-const { number, title, description, href, featured = false } = Astro.props;
+const { number, title, description, href, featured } = Astro.props;
 ---
 
 <a
   href={href}
   title={`Saber más sobre ${title}`}
   aria-label={`Ver información detallada sobre ${title}`}
-  class={`group relative block rounded-3xl p-8 md:p-10
-          transition-all duration-300
-          ${
-            featured
-              ? "bg-brand-5 text-white shadow-[0_40px_80px_-30px_rgba(0,0,0,0.4)]"
-              : "bg-white text-brand-5 border border-brand-5/10"
-          }
-          hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-brand-4`}
+  class={`group relative block rounded-3xl p-8 md:p-10 bg-brand
+          transition-all duration-300 hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-brand-4`}
 >
   <span
     aria-hidden="true"

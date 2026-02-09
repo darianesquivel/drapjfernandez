@@ -1,188 +1,228 @@
-<header
-  id="main-header"
-  class="w-full flex flex-col justify-center items-center fixed z-50 transition-transform duration-300 ease-out bg-brand"
->
-  <div
-    class="flex w-full max-w-6xl justify-between items-center text-brand-5 py-4 px-6"
-  >
-    <div class="flex gap-5 justify-center items-center">
-      <a
-        href="/"
-        aria-label="Ir a la página de inicio de Dra. Pamela J. Fernandez"
-        title="Inicio - Dra. Pamela J. Fernandez"
-        class="text-lg md:text-2xl font-extrabold"
-      >
-        <img
-          src="/logo.svg"
-          alt="Dra. Pamela J. Fernandez - Cirugía Bariátrica Integral"
-          class="h-8 md:h-8 w-auto"
-          width="180"
-          height="32"
-        />
+<header id="main-header" class="header-container">
+  <div class="header-content bg-brand">
+    <div class="logo-wrapper">
+      <a href="/" aria-label="Inicio" title="Dra. Pamela J. Fernandez">
+        <img src="/logo.svg" alt="Dra. Pamela J. Fernandez" class="logo-img" />
       </a>
     </div>
 
-    <nav
-      aria-label="Menú de navegación principal"
-      class="hidden md:flex gap-6 lg:gap-10 font-extrabold items-center text-xs md:text-sm"
-    >
-      <a
-        href="/#home"
-        title="Volver al inicio"
-        class="transition-transform duration-300 hover:scale-110 uppercase"
-        >Inicio</a
-      >
-      <a
-        href="/#sobre-mi"
-        title="Conoce la trayectoria de la Dra. Pamela Fernandez"
-        class="transition-transform duration-300 hover:scale-110 uppercase"
-        >Sobre mi</a
-      >
-      <a
-        href="/centros"
-        title="Sedes y centros de atención médica"
-        class="transition-transform duration-300 hover:scale-110 uppercase"
-        >Centros</a
-      >
-      <a
-        href="/#tratamientos"
-        title="Cirugía bariátrica, general y percutánea"
-        class="transition-transform duration-300 hover:scale-110 uppercase"
-        >Tratamientos</a
-      >
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="/#home">Inicio</a>
+      <a href="/#sobre-mi">Sobre mí</a>
+      <a href="/centros">Centros</a>
+      <a href="/#tratamientos">Tratamientos</a>
       <a
         href="#contact"
-        title="Contactar para consulta médica"
         class="inline-flex items-center gap-3
-        bg-brand-3 text-white
-        font-bold px-4 py-1
-        rounded-full
-        transition-all duration-300
-        hover:scale-[1.04] hover:shadow-xl
-        hover:bg-brand-5 hover:scale-105
-        focus:bg-brand-5 focus:scale-105
-        active:bg-brand-5 active:scale-105 shadow-lg uppercase"
+      bg-brand-3 text-white
+      font-bold text-lg px-4 py-1
+      rounded-full
+      transition-all duration-300
+      hover:scale-[1.04] hover:shadow-xl
+      hover:bg-brand-5
+      focus:outline-none focus:ring-2 focus:ring-brand-4
+      active:scale-105 shadow-lg"
         >Contacto</a
       >
     </nav>
 
-    <div class="relative z-50 md:hidden">
-      <button
-        id="menu-btn"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Abrir menú de navegación móvil"
-        class="p-2 flex flex-col gap-1.5 items-end"
-        type="button"
-      >
-        <span class="w-6 h-0.5 bg-brand-5 rounded"></span>
-        <span class="w-4 h-0.5 bg-brand-5 rounded"></span>
-        <span class="w-5 h-0.5 bg-brand-5 rounded"></span>
-      </button>
+    <button
+      id="menu-btn"
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <span class="bar bg-brand-5"></span>
+      <span class="bar bg-brand-5"></span>
+      <span class="bar bg-brand-5"></span>
+    </button>
+  </div>
 
-      <div
-        id="mobile-menu"
-        class="absolute right-[-1.5rem] top-[100%] w-screen max-w-[100vw] bg-brand text-brand-5 font-bold flex flex-col divide-y divide-white/10 overflow-hidden max-h-0 opacity-0 pointer-events-none transition-all duration-300 shadow-xl"
-        role="menu"
-      >
-        <a
-          href="/#home"
-          class="block w-full px-6 py-4 hover:bg-white/10 uppercase"
-          role="menuitem">Inicio</a
-        >
-        <a
-          href="/#sobre-mi"
-          class="block w-full px-6 py-4 hover:bg-white/10 uppercase"
-          role="menuitem">Sobre mi</a
-        >
-        <a
-          href="/centros"
-          class="block w-full px-6 py-4 hover:bg-white/10 uppercase"
-          role="menuitem">Centros</a
-        >
-        <a
-          href="/#tratamientos"
-          class="block w-full px-6 py-4 hover:bg-white/10 uppercase"
-          role="menuitem">Tratamientos</a
-        >
-        <a
-          href="#contact"
-          class="block w-full px-6 py-4 hover:bg-white/10 uppercase text-secondary"
-          role="menuitem">Contacto</a
-        >
-      </div>
-    </div>
+  <div id="mobile-menu" class="mobile-menu bg-brand">
+    <nav class="text-brand-5">
+      <a href="/#home">Inicio</a>
+      <a href="/#sobre-mi">Sobre mí</a>
+      <a href="/centros">Centros</a>
+      <a href="/#tratamientos">Tratamientos</a>
+      <a href="#contact" class="mobile-contact">Contacto</a>
+    </nav>
   </div>
 </header>
 
+<style>
+  .header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .header-content {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 2rem;
+    width: auto;
+  }
+
+  .desktop-nav {
+    display: none;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: flex;
+    }
+
+    .header-content {
+      padding: 1rem 5rem;
+    }
+  }
+
+  .desktop-nav a {
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: transform 0.3s;
+  }
+
+  .desktop-nav a:hover {
+    transform: scale(1.1);
+  }
+
+  .btn-contact {
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1100;
+  }
+
+  @media (min-width: 768px) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+
+  .bar {
+    width: 25px;
+    height: 2px;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+    pointer-events: none;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-menu a {
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    color: var(--brand-text);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+</style>
+
 <script>
-  function initHeader() {
+  const initHeader = () => {
     const header = document.getElementById("main-header");
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    const wrapper = menuBtn?.parentElement;
 
     if (!header || !menuBtn || !mobileMenu) return;
 
-    const openClasses = ["max-h-[400px]", "opacity-100", "pointer-events-auto"];
-    const closeClasses = ["max-h-0", "opacity-0", "pointer-events-none"];
+    let isMenuOpen = false;
 
-    const toggleMenu = (e: MouseEvent) => {
-      e.stopPropagation();
-      const isOpen = mobileMenu.classList.contains("opacity-100");
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
 
-      if (isOpen) {
-        mobileMenu.classList.remove(...openClasses);
-        mobileMenu.classList.add(...closeClasses);
-        menuBtn.setAttribute("aria-expanded", "false");
-      } else {
-        mobileMenu.classList.remove(...closeClasses);
-        mobileMenu.classList.add(...openClasses);
-        menuBtn.setAttribute("aria-expanded", "true");
+      menuBtn.classList.toggle("active", isMenuOpen);
+      mobileMenu.classList.toggle("active", isMenuOpen);
+
+      document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+      if (isMenuOpen) {
+        header.style.transform = "translateY(0)";
       }
     };
 
-    const closeMenu = () => {
-      mobileMenu.classList.remove(...openClasses);
-      mobileMenu.classList.add(...closeClasses);
-      menuBtn.setAttribute("aria-expanded", "false");
-    };
+    menuBtn.onclick = toggleMenu;
 
-    menuBtn.removeEventListener("click", toggleMenu as any);
-    menuBtn.addEventListener("click", toggleMenu as any);
-
-    const handleOutsideClick = (e: MouseEvent) => {
-      if (!wrapper?.contains(e.target as Node)) closeMenu();
-    };
-    document.removeEventListener("click", handleOutsideClick);
-    document.addEventListener("click", handleOutsideClick);
-
-    mobileMenu.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => closeMenu());
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach((l) => {
+      l.onclick = () => {
+        if (isMenuOpen) toggleMenu();
+      };
     });
 
     let lastScrollY = window.scrollY;
-    const scrollThreshold = 50;
 
-    const handleScroll = () => {
+    window.onscroll = () => {
+      if (isMenuOpen) return;
+
       const currentScrollY = window.scrollY;
-      const headerHeight = header.offsetHeight;
-
-      if (currentScrollY <= scrollThreshold) {
-        header.style.transform = "translateY(0)";
-      } else if (
-        currentScrollY > lastScrollY &&
-        currentScrollY > headerHeight
-      ) {
-        header.style.transform = `translateY(-${headerHeight}px)`;
-      } else if (currentScrollY < lastScrollY) {
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        header.style.transform = "translateY(-100%)";
+      } else {
         header.style.transform = "translateY(0)";
       }
       lastScrollY = currentScrollY;
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-  }
+  };
 
   document.addEventListener("astro:page-load", initHeader);
+  initHeader();
 </script>

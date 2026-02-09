@@ -3,15 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Cirugía General y Laparoscópica | Dra. Pamela J. Fernandez">
-  <section class="pt-20 bg-brand">
+  <section class="md:pt-40 pt-25 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <p
-        data-aos="fade-up"
-        class="text-brand-5 font-semibold tracking-wide mb-3 uppercase text-sm"
-      >
-        Especialidad en Cirugía General
-      </p>
-
       <h2
         data-aos="fade-up"
         data-aos-delay="100"
@@ -68,7 +61,7 @@ import Layout from "../../layouts/Layout.astro";
         <article
           data-aos="fade-up"
           data-aos-delay="300"
-          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
         >
           <h3 class="text-2xl font-bold text-gray-900">
             Cirugía laparoscópica
@@ -80,26 +73,30 @@ import Layout from "../../layouts/Layout.astro";
             para abordar la patología de forma precisa.
           </p>
 
-          <ul class="space-y-2 text-gray-700 font-medium">
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Menor impacto quirúrgico
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Disminución del dolor postoperatorio
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Menor tiempo de internación
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Recuperación más rápida
-            </li>
-          </ul>
+          <div
+            class="w-full flex justify-center [@media(min-width:1000px)]:justify-start"
+          >
+            <ul class="space-y-2 text-gray-700 font-medium text-left">
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Menor impacto quirúrgico
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Disminución del dolor postoperatorio
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Menor tiempo de internación
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Recuperación más rápida
+              </li>
+            </ul>
+          </div>
         </article>
 
         <article
           data-aos="fade-up"
           data-aos-delay="300"
-          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
         >
           <h3 class="text-2xl font-bold text-gray-900">Cirugía abierta</h3>
 
@@ -109,20 +106,24 @@ import Layout from "../../layouts/Layout.astro";
             características particulares del paciente.
           </p>
 
-          <ul class="space-y-2 text-gray-700 font-medium">
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Abordaje directo y seguro
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Indicada en cuadros complejos
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Precisión técnica y control quirúrgico
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-5">•</span> Mismo enfoque de cuidado integral
-            </li>
-          </ul>
+          <div
+            class="w-full flex justify-center [@media(min-width:1000px)]:justify-start"
+          >
+            <ul class="space-y-2 text-gray-700 font-medium text-left">
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Abordaje directo y seguro
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Indicada en cuadros complejos
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Precisión técnica y control quirúrgico
+              </li>
+              <li class="flex gap-2">
+                <span class="text-brand-5">•</span> Mismo enfoque de cuidado integral
+              </li>
+            </ul>
+          </div>
         </article>
       </div>
 
@@ -139,10 +140,10 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-10 bg-gradient-to-b from-brand-2 to-brand-3">
+  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-3">
     <div data-aos="fade-up" class="max-w-5xl mx-auto px-6 space-y-20">
       <article
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
       >
         <header>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
@@ -171,7 +172,7 @@ import Layout from "../../layouts/Layout.astro";
       <hr class="border-brand-5/30" />
 
       <article
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-start"
+        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
       >
         <header>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
