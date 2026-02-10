@@ -7,71 +7,96 @@
     alt=""
     role="presentation"
     aria-hidden="true"
-    class="absolute inset-0 w-full h-full object-cover
-           z-0 pointer-events-none"
+    class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
     width="1920"
     height="1080"
   />
 
-  <div
-    class="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center gap-10"
-  >
-    <h2
-      data-aos="fade-up"
-      class="font-extrabold text-3xl md:text-4xl lg:text-5xl text-white"
-    >
-      Dónde opero
-    </h2>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="flex flex-col gap-8" data-aos="fade-right">
+        <div class="text-center md:px-10 px-0">
+          <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
+            Dónde atiendo
+          </h2>
+          <p class="text-white/80 text-lg">
+            Consultorios para atención clínica y seguimiento pre/post
+            quirúrgico.
+          </p>
+        </div>
 
-    <p
-      data-aos="fade-up"
-      data-aos-delay="100"
-      class="text-white/80 max-w-xl mx-auto text-lg"
-    >
-      Instituciones médicas donde realizo procedimientos quirúrgicos, cumpliendo
-      con los más altos estándares de seguridad y calidad hospitalaria.
-    </p>
+        <div class="grid grid-cols-1 gap-4">
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center gap-6 h-60"
+          >
+            <div
+              class="shrink-0 w-60 h-20 rounded-xl overflow-hidden border border-white/20"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.46328!2d-58.62!3d-34.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDI0JzAwLjAiUyA1OMKwMzYnMDAuMCJX!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar"
+                allowfullscreen=""
+                loading="lazy"
+                title="Mapa consultorio Nordelta"
+              >
+              </iframe>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-white font-bold text-lg">Consultorio Nordelta</h3>
+              <p class="text-white/70 text-sm">Av. de los Lagos 6855, Tigre</p>
+              <span
+                class="text-brand-2 text-xs font-bold mt-1 uppercase tracking-wider"
+                >Edificio North Coral Plaza</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div
-      data-aos="fade-up"
-      data-aos-delay="200"
-      class="flex flex-col [@media(min-width:1000px)]:flex-row
-             items-center justify-center
-             gap-16 [@media(min-width:1000px)]:gap-24"
-    >
-      <div
-        class="flex flex-col items-center justify-center gap-4
-               hover:scale-105 transition-all duration-300"
-      >
-        <img
-          src="/laslomas-logo.svg"
-          alt="Sanatorio Las Lomas - Sede de atención de la Dra. Pamela J. Fernandez"
-          title="Sanatorio Las Lomas"
-          class="h-20 md:h-24 object-contain"
-          loading="lazy"
-          decoding="async"
-        />
-        <p
-          class="text-xs uppercase tracking-widest text-white/70 font-semibold"
+      <div class="flex flex-col gap-8 text-center" data-aos="fade-left">
+        <div>
+          <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
+            Dónde opero
+          </h2>
+          <p class="text-white/80 text-lg max-w-sm mx-auto">
+            Instituciones de alta complejidad donde realizo mis cirugías.
+          </p>
+        </div>
+
+        <div
+          class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center gap-6 h-60"
         >
-          Sedes · San Isidro / Nordelta / Angelus
-        </p>
+          <div class="hover:scale-105 transition-all duration-300">
+            <img
+              src="/laslomas-logo.svg"
+              alt="Sanatorio Las Lomas"
+              class="h-20 md:h-24 object-contain w-auto"
+              loading="lazy"
+              decoding="async"
+              width="200"
+              height="96"
+            />
+          </div>
+          <div class="space-y-1">
+            <p class="text-xs uppercase tracking-widest text-brand-2 font-bold">
+              Sedes habilitadas
+            </p>
+            <p class="text-white/70 font-medium italic">
+              San Isidro · Nordelta · Angelus
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <a
+            href="/centros"
+            title="Conocer todas las sedes y centros de atención"
+            class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full
+             transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+          >
+            Ver detalle de sedes
+          </a>
+        </div>
       </div>
     </div>
-
-    <a
-      data-aos="fade-up"
-      data-aos-delay="300"
-      href="/centros"
-      title="Conocer todas las sedes y centros de atención"
-      aria-label="Ver más información sobre los centros médicos"
-      class="min-w-3xs text-center block bg-brand-2 text-white font-bold py-4 px-12 rounded-full
-       transition-all duration-300 ease-in-out
-       hover:bg-brand-5 hover:scale-105
-       focus:bg-brand-5 focus:scale-105
-       active:bg-brand-5 active:scale-105 shadow-lg"
-    >
-      Ver más
-    </a>
   </div>
 </section>

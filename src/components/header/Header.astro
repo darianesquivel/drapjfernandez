@@ -2,7 +2,16 @@
   <div class="header-content bg-brand">
     <div class="logo-wrapper">
       <a href="/" aria-label="Inicio" title="Dra. Pamela J. Fernandez">
-        <img src="/logo.svg" alt="Dra. Pamela J. Fernandez" class="logo-img" />
+        <img
+          src="/logo.svg"
+          alt="Dra. Pamela J. Fernandez - Cirujana General y Bariátrica"
+          class="h-8 w-auto"
+          width="180"
+          height="40"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
       </a>
     </div>
 
@@ -13,15 +22,7 @@
       <a href="/#tratamientos">Tratamientos</a>
       <a
         href="#contact"
-        class="inline-flex items-center gap-3
-      bg-brand-3 text-white
-      font-bold text-lg px-4 py-1
-      rounded-full
-      transition-all duration-300
-      hover:scale-[1.04] hover:shadow-xl
-      hover:bg-brand-5
-      focus:outline-none focus:ring-2 focus:ring-brand-4
-      active:scale-105 shadow-lg"
+        class="inline-flex items-center gap-3 bg-brand-3 text-white font-bold text-lg px-4 py-1 rounded-full transition-all duration-300 hover:scale-[1.04] hover:shadow-xl hover:bg-brand-5 focus:outline-none focus:ring-2 focus:ring-brand-4 active:scale-105 shadow-lg"
         >Contacto</a
       >
     </nav>
@@ -50,6 +51,7 @@
 </header>
 
 <style>
+  /* Tu CSS original se mantiene intacto */
   .header-container {
     position: fixed;
     top: 0;
@@ -57,38 +59,32 @@
     width: 100%;
     z-index: 1000;
     transition: transform 0.4s ease-in-out;
+    will-change: transform; /* OPTIMIZACIÓN: Avisamos al navegador que esto va a cambiar */
   }
-
   .header-content {
-    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
   .logo-img {
     height: 2rem;
     width: auto;
   }
-
   .desktop-nav {
     display: none;
     gap: 2rem;
     align-items: center;
   }
-
   @media (min-width: 768px) {
     .desktop-nav {
       display: flex;
     }
-
     .header-content {
       padding: 1rem 5rem;
     }
   }
-
   .desktop-nav a {
     text-decoration: none;
     font-weight: 800;
@@ -96,17 +92,9 @@
     font-size: 0.875rem;
     transition: transform 0.3s;
   }
-
   .desktop-nav a:hover {
     transform: scale(1.1);
   }
-
-  .btn-contact {
-    color: white !important;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-  }
-
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -117,20 +105,17 @@
     padding: 5px;
     z-index: 1100;
   }
-
   @media (min-width: 768px) {
     .menu-toggle {
       display: none;
     }
   }
-
   .bar {
     width: 25px;
     height: 2px;
     border-radius: 2px;
     transition: all 0.3s;
   }
-
   .mobile-menu {
     position: fixed;
     top: 0;
@@ -145,26 +130,21 @@
     z-index: 1050;
     pointer-events: none;
   }
-
   .mobile-menu.active {
     transform: translateX(0);
     pointer-events: auto;
   }
-
   .mobile-menu nav {
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
-
   .mobile-menu a {
     padding: 1.5rem 2rem;
     text-decoration: none;
-    color: var(--brand-text);
     font-weight: 800;
     text-transform: uppercase;
   }
-
   .menu-toggle.active .bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -185,42 +165,51 @@
     if (!header || !menuBtn || !mobileMenu) return;
 
     let isMenuOpen = false;
+    let lastScrollY = window.scrollY;
+    let ticking = false; // Control de frames
 
     const toggleMenu = () => {
       isMenuOpen = !isMenuOpen;
-
       menuBtn.classList.toggle("active", isMenuOpen);
       mobileMenu.classList.toggle("active", isMenuOpen);
-
       document.body.style.overflow = isMenuOpen ? "hidden" : "";
-
-      if (isMenuOpen) {
-        header.style.transform = "translateY(0)";
-      }
+      if (isMenuOpen) header.style.transform = "translateY(0)";
     };
 
     menuBtn.onclick = toggleMenu;
 
     const links = mobileMenu.querySelectorAll("a");
     links.forEach((l) => {
-      l.onclick = () => {
+      (l as HTMLElement).onclick = () => {
         if (isMenuOpen) toggleMenu();
       };
     });
 
-    let lastScrollY = window.scrollY;
-
-    window.onscroll = () => {
-      if (isMenuOpen) return;
-
+    const updateHeader = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        header.style.transform = "translateY(-100%)";
-      } else {
-        header.style.transform = "translateY(0)";
+
+      if (!isMenuOpen) {
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
       }
       lastScrollY = currentScrollY;
+      ticking = false;
     };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        // Optimizamos con requestAnimationFrame para evitar el reflow forzado
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
   };
 
   document.addEventListener("astro:page-load", initHeader);

@@ -1,11 +1,9 @@
-<section id="home" class="relative py-20 lg:py-32 verflow-hidden">
+<section id="home" class="relative py-20 lg:py-32 overflow-hidden">
   <div
     class="max-w-[1200px] mx-auto px-6 md:px-15 grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-2 gap-12 items-center z-10"
   >
     <div
-      data-aos="fade-up"
-      data-aos-delay="300"
-      class="flex flex-col text-center [@media(min-width:1000px)]:text-left order-2 [@media(min-width:1000px)]:order-1"
+      class="hero-content-animation flex flex-col text-center [@media(min-width:1000px)]:text-left order-2 [@media(min-width:1000px)]:order-1"
     >
       <span
         class="inline-block self-center [@media(min-width:1000px)]:self-start mb-4 px-4 py-1 rounded-full
@@ -53,7 +51,6 @@
     </div>
 
     <div
-      data-aos="fade-up"
       class="relative flex justify-center [@media(min-width:1000px)]:justify-end order-1 [@media(min-width:1000px)]:order-2 z-10"
     >
       <div class="absolute inset-10 rounded-full bg-brand-3/30 blur-3xl"></div>
@@ -62,11 +59,11 @@
         src="/hero-image.svg"
         alt="Dra. Pamela J. Fernandez - Especialista en Cirugía General y Bariátrica"
         title="Dra. Pamela J. Fernandez"
-        class="relative w-full max-w-sm rounded-2xl
+        class="hero-img-perfo relative w-2xs md:w-sm rounded-2xl
                drop-shadow-xl transition-transform duration-500
                hover:scale-[1.02]"
         loading="eager"
-        decoding="async"
+        decoding="sync"
         width="400"
         height="400"
         fetchpriority="high"
@@ -92,22 +89,50 @@
     </svg>
   </div>
 
-  <div class="absolute inset-0 pointer-events-none">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div
       class="absolute top-20 left-10 w-48 h-32 border border-brand-4/20 rounded-3xl rotate-12"
+      style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
       class="absolute top-1/3 right-16 w-64 h-40 border border-brand-5/15 rounded-[2.5rem] -rotate-6"
+      style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
       class="absolute bottom-32 left-1/4 w-56 h-36 border border-brand-3/20 rounded-3xl rotate-3"
+      style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
       class="hidden [@media(min-width:1000px)]:block absolute bottom-20 right-1/4 w-72 h-44 border border-brand-4/10 rounded-[3rem] -rotate-12"
+      style="contain: strict; content-visibility: auto;"
     >
     </div>
   </div>
 </section>
+
+<style>
+  .hero-content-animation,
+  .hero-img-perfo {
+    animation: heroFadeUp 0.8s ease-out forwards;
+    will-change: opacity, transform;
+  }
+
+  .hero-content-animation {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
