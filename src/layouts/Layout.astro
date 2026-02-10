@@ -45,6 +45,12 @@ const {
       href="/hero-image.svg"
       fetchpriority="high"
     />
+    <link
+      rel="modulepreload"
+      href="/_astro/Layout.astro_ast.DLx97c9h.js"
+      as="script"
+      crossorigin
+    />
   </head>
 
   <body class="bg-brand antialiased text-brand-5">
@@ -58,18 +64,20 @@ const {
     <script>
       import AOS from "aos";
 
-      const initAOS = () => {
+      function initAOS() {
         AOS.init({
           duration: 800,
           offset: 50,
           once: true,
           easing: "ease-in-out",
         });
-      };
+      }
 
-      window.requestAnimationFrame(() => {
-        initAOS();
-      });
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(() => initAOS());
+      } else {
+        setTimeout(initAOS, 100);
+      }
 
       document.addEventListener("astro:after-swap", initAOS);
     </script>
