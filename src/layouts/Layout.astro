@@ -45,12 +45,6 @@ const {
       href="/hero-image.svg"
       fetchpriority="high"
     />
-    <link
-      rel="modulepreload"
-      href="/_astro/Layout.astro_ast.DLx97c9h.js"
-      as="script"
-      crossorigin
-    />
   </head>
 
   <body class="bg-brand antialiased text-brand-5">
@@ -62,21 +56,20 @@ const {
     <WhatsappBtn />
 
     <script>
-      import AOS from "aos";
-
-      function initAOS() {
+      const initAOS = async () => {
+        const { default: AOS } = await import("aos");
         AOS.init({
           duration: 800,
           offset: 50,
           once: true,
           easing: "ease-in-out",
         });
-      }
+      };
 
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback(() => initAOS());
+      if (document.readyState === "complete") {
+        initAOS();
       } else {
-        setTimeout(initAOS, 100);
+        window.addEventListener("load", initAOS);
       }
 
       document.addEventListener("astro:after-swap", initAOS);
