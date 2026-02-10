@@ -91,22 +91,22 @@
 
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div
-      class="absolute top-20 left-10 w-48 h-32 border border-brand-4/20 rounded-3xl rotate-12"
+      class="shape-decorator absolute top-20 left-10 w-48 h-32 border border-brand-4/20 rounded-3xl rotate-12"
       style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
-      class="absolute top-1/3 right-16 w-64 h-40 border border-brand-5/15 rounded-[2.5rem] -rotate-6"
+      class="shape-decorator absolute top-1/3 right-16 w-64 h-40 border border-brand-5/15 rounded-[2.5rem] -rotate-6"
       style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
-      class="absolute bottom-32 left-1/4 w-56 h-36 border border-brand-3/20 rounded-3xl rotate-3"
+      class="shape-decorator absolute bottom-32 left-1/4 w-56 h-36 border border-brand-3/20 rounded-3xl rotate-3"
       style="contain: strict; content-visibility: auto;"
     >
     </div>
     <div
-      class="hidden [@media(min-width:1000px)]:block absolute bottom-20 right-1/4 w-72 h-44 border border-brand-4/10 rounded-[3rem] -rotate-12"
+      class="shape-decorator hidden [@media(min-width:1000px)]:block absolute bottom-20 right-1/4 w-72 h-44 border border-brand-4/10 rounded-[3rem] -rotate-12"
       style="contain: strict; content-visibility: auto;"
     >
     </div>
@@ -114,6 +114,12 @@
 </section>
 
 <style>
+  .shape-decorator {
+    contain-intrinsic-size: auto;
+    content-visibility: auto;
+    backface-visibility: hidden;
+  }
+
   .hero-content-animation,
   .hero-img-perfo {
     animation: heroFadeUp 0.8s ease-out forwards;

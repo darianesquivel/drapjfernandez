@@ -58,19 +58,20 @@ const {
     <script>
       import AOS from "aos";
 
-      const setupAOS = () => {
-        if (typeof window !== "undefined") {
-          AOS.init({
-            duration: 800,
-            offset: 50,
-            once: true,
-            easing: "ease-in-out",
-          });
-        }
+      const initAOS = () => {
+        AOS.init({
+          duration: 800,
+          offset: 50,
+          once: true,
+          easing: "ease-in-out",
+        });
       };
 
-      document.addEventListener("DOMContentLoaded", setupAOS);
-      document.addEventListener("astro:after-swap", setupAOS);
+      window.requestAnimationFrame(() => {
+        initAOS();
+      });
+
+      document.addEventListener("astro:after-swap", initAOS);
     </script>
   </body>
 </html>

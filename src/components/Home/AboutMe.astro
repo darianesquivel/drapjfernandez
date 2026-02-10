@@ -11,13 +11,13 @@
     height="1080"
   />
   <div
-    class="absolute top-10 left-10 w-96 h-96
+    class="shape-decorator absolute top-10 left-10 w-96 h-96
            border border-brand-5/10 rounded-3xl rotate-12"
   >
   </div>
 
   <div
-    class="absolute bottom-10 -right-32 w-[28rem] h-[28rem]
+    class="shape-decorator absolute bottom-10 -right-32 w-[28rem] h-[28rem]
            border border-brand-5/10 rounded-3xl -rotate-6"
   >
   </div>
@@ -116,3 +116,11 @@
     </div>
   </div>
 </section>
+
+<style>
+  .shape-decorator {
+    contain-intrinsic-size: auto;
+    content-visibility: auto;
+    backface-visibility: hidden;
+  }
+</style>
