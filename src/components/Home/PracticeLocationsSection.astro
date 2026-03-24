@@ -13,40 +13,72 @@
   />
 
   <div class="relative z-10 max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-      <div class="flex flex-col gap-8" data-aos="fade-right">
-        <div class="text-center md:px-10 px-0">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+      <div class="flex flex-col" data-aos="fade-right">
+        <div class="text-center md:px-10 px-0 mb-8">
           <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
             Dónde atiendo
           </h2>
-          <p class="text-white/80 text-lg">
+          <p class="text-white/80 text-lg max-w-sm mx-auto">
             Consultorios para atención clínica y seguimiento pre/post
             quirúrgico.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 gap-4">
+        <div class="flex-1 grid gap-8">
           <div
-            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center gap-6 h-60"
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center justify-center gap-6 border border-white/5"
           >
-            <div
-              class="shrink-0 w-60 h-20 rounded-xl overflow-hidden border border-white/20"
+            <a
+              href="https://www.google.com/maps/place/Sanatorio+Las+Lomas+-+Sede+Nordelta/@-34.4004847,-58.6530865,17z/data=!3m1!4b1!4m6!3m5!1s0x95bca14eab978ce7:0x370bc38ae4b1a9a3!8m2!3d-34.4004847!4d-58.6530865!16s%2Fg%2F1hc0wh_1z?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative shrink-0 w-70 h-24 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 shadow-lg"
             >
-            </div>
-            <div class="flex flex-col items-centers">
-              <h3 class="text-white font-bold text-lg">Consultorio Nordelta</h3>
-              <p class="text-white/70 text-sm">Av. de los Lagos 6855, Tigre</p>
-              <span
-                class="text-brand-2 text-xs font-bold mt-1 uppercase tracking-wider"
-                >Edificio North Coral Plaza</span
+              <img
+                src="/mapa-nordelta.jpg"
+                alt="Ubicación Consultorio Nordelta"
+                class="w-full h-full object-cover filter transition-all"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center"
               >
+                <span
+                  class="text-white text-[10px] bg-black/60 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity uppercase font-bold tracking-tighter"
+                >
+                  Ver en Google Maps
+                </span>
+              </div>
+            </a>
+            <div class="space-y-1 text-center">
+              <p
+                class="text-xs uppercase tracking-widest text-brand-2 font-bold"
+              >
+                Horario: Miércoles de 8hs a 11.30hs
+              </p>
+              <p class="text-white/70 font-medium italic">
+                Av. de los lagos 6785, Tigre, Buenos Aires.
+              </p>
             </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="https://wa.me/5491128808666?text=Hola%2C+te+contacto+desde+la+pagina+web%2C+quisiera+solicitar+un+turno"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Agendar consulta por WhatsApp"
+              aria-label="Agendar consulta por WhatsApp"
+              class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+            >
+              Agendar consulta
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-8 text-center" data-aos="fade-left">
-        <div>
+      <div class="flex flex-col" data-aos="fade-left">
+        <div class="text-center md:px-10 px-0 mb-8">
           <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
             Dónde opero
           </h2>
@@ -55,39 +87,41 @@
           </p>
         </div>
 
-        <div
-          class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center gap-6 h-60"
-        >
-          <div class="hover:scale-105 transition-all duration-300">
-            <img
-              src="/laslomas-logo.svg"
-              alt="Sanatorio Las Lomas"
-              class="h-20 md:h-24 object-contain w-auto"
-              loading="lazy"
-              decoding="async"
-              width="200"
-              height="96"
-            />
-          </div>
-          <div class="space-y-1">
-            <p class="text-xs uppercase tracking-widest text-brand-2 font-bold">
-              Sedes habilitadas
-            </p>
-            <p class="text-white/70 font-medium italic">
-              San Isidro · Nordelta · Angelus
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-4">
-          <a
-            href="/centros"
-            title="Conocer todas las sedes y centros de atención"
-            class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full
-             transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+        <div class="flex-1 grid gap-8">
+          <div
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center justify-center gap-6 border border-white/5"
           >
-            Ver detalle de sedes
-          </a>
+            <div class="hover:scale-105 transition-all duration-300">
+              <img
+                src="/laslomas-logo.svg"
+                alt="Sanatorio Las Lomas"
+                class="h-20 md:h-24 object-contain w-auto"
+                loading="lazy"
+                decoding="async"
+                width="200"
+                height="96"
+              />
+            </div>
+            <div class="space-y-1 text-center">
+              <p
+                class="text-xs uppercase tracking-widest text-brand-2 font-bold"
+              >
+                Sedes habilitadas
+              </p>
+              <p class="text-white/70 font-medium italic">
+                San Isidro · Nordelta · Angelus
+              </p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              href="/centros"
+              class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+            >
+              Ver detalle de sedes
+            </a>
+          </div>
         </div>
       </div>
     </div>
