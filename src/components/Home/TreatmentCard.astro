@@ -11,8 +11,8 @@ const { number, title, description, href, featured } = Astro.props;
 >
   <span
     aria-hidden="true"
-    class={`absolute top-6 right-8 text-6xl font-extrabold select-none
-            ${featured ? "text-white/20" : "text-brand-5/10"}`}
+    class={`absolute top-3 right-3 text-6xl font-extrabold select-none
+            ${featured ? "text-white/20" : "text-brand-5/80"}`}
   >
     {number}
   </span>
@@ -26,14 +26,14 @@ const { number, title, description, href, featured } = Astro.props;
 
   <p
     class={`leading-relaxed max-w-md
-            ${featured ? "text-white/80" : "text-brand-5/70"}`}
+            ${featured ? "text-white/80" : "text-brand-5"}`}
   >
     {description}
   </p>
 
   <div
     class={`mt-6 text-sm font-semibold tracking-wide flex items-center gap-1
-            ${featured ? "text-white/80" : "text-brand-5/60"}`}
+            ${featured ? "text-white/80" : "text-brand-5"}`}
   >
     Ver más <span
       class="transition-transform duration-300 group-hover:translate-x-1"
