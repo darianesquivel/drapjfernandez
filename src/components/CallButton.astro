@@ -1,0 +1,49 @@
+---
+import { CONTACT } from "../consts";
+
+interface Props {
+  /** "dark" para fondos oscuros (borde claro), "light" para fondos claros. */
+  variant?: "dark" | "light";
+  trackLabel: string;
+  class?: string;
+}
+
+const { variant = "light", trackLabel, class: className = "" } = Astro.props;
+
+// El número no se muestra: en el botón queda sólo el ícono y la palabra
+// "Llamar". El número visible vive en el footer, donde funciona como dato de
+// contacto (NAP) y no compite con el CTA principal.
+const styles =
+  variant === "dark"
+    ? "border-brand text-brand hover:bg-brand hover:text-brand-5"
+    : "border-brand-4 text-brand-5 hover:bg-brand-4 hover:text-white";
+---
+
+<a
+  href={`tel:${CONTACT.phone}`}
+  data-track-label={trackLabel}
+  title={`Llamar al ${CONTACT.phoneDisplay}`}
+  aria-label={`Llamar al ${CONTACT.phoneDisplay}`}
+  class={`inline-flex items-center justify-center gap-3 border-2
+          font-bold text-lg px-10 py-4 rounded-full
+          transition-all duration-300 active:scale-105 ${styles} ${className}`}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+    ></path>
+  </svg>
+  Llamar
+</a>

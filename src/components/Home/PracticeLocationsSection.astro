@@ -1,12 +1,17 @@
+---
+import { OFFICES, waLink } from "../../consts";
+---
+
 <section
   id="sedes"
-  class="relative bg-gradient-to-b from-brand-3 to-brand-4 py-20 lg:py-28 overflow-hidden"
+  class="relative bg-gradient-to-b from-brand-5 to-brand-4 py-20 lg:py-28 overflow-hidden"
 >
   <img
     src="/wave2.svg"
     alt=""
-    role="presentation"
     aria-hidden="true"
+    loading="lazy"
+    decoding="async"
     class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
     width="1920"
     height="1080"
@@ -19,57 +24,49 @@
           <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
             Dónde atiendo
           </h2>
-          <p class="text-white/80 text-lg max-w-sm mx-auto">
-            Consultorios para atención clínica y seguimiento pre/post
-            quirúrgico.
+          <p class="text-white/90 text-lg max-w-sm mx-auto">
+            Atención clínica y seguimiento pre y post quirúrgico, en consultorio
+            privado y en hospital público.
           </p>
         </div>
 
-        <div class="flex-1 grid gap-8">
-          <div
-            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center justify-center gap-6 border border-white/5"
-          >
-            <a
-              href="https://www.google.com/maps/place/Sanatorio+Las+Lomas+-+Sede+Nordelta/@-34.4004847,-58.6530865,17z/data=!3m1!4b1!4m6!3m5!1s0x95bca14eab978ce7:0x370bc38ae4b1a9a3!8m2!3d-34.4004847!4d-58.6530865!16s%2Fg%2F1hc0wh_1z?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group relative shrink-0 w-70 h-24 rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
-              <img
-                src="/mapa-nordelta.webp"
-                alt="Ubicación Consultorio Nordelta"
-                class="w-full h-full object-cover filter transition-all"
-              />
-              <div
-                class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center"
-              >
-                <span
-                  class="text-white text-[10px] bg-black/60 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity uppercase font-bold tracking-tighter"
+        <div class="flex-1 flex flex-col gap-6">
+          {
+            OFFICES.map((office) => (
+              <div class="bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/10 flex flex-col gap-3">
+                <p class="text-[10px] uppercase tracking-widest text-brand font-bold">
+                  {office.kind}
+                </p>
+                <h3 class="text-white font-bold text-lg leading-snug">
+                  {office.name}
+                </h3>
+                <p class="text-white/90 text-sm">
+                  {office.street}, {office.locality}
+                </p>
+                <p class="text-brand/90 text-sm font-semibold">
+                  {office.hoursDisplay}
+                </p>
+                <a
+                  href={office.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="self-start text-xs uppercase font-bold tracking-wide text-white/80 underline underline-offset-4 hover:text-white transition-colors"
                 >
                   Ver en Google Maps
-                </span>
+                </a>
               </div>
-            </a>
-            <div class="space-y-1 text-center">
-              <p
-                class="text-xs uppercase tracking-widest text-brand-2 font-bold"
-              >
-                Horario: Miércoles de 8hs a 11.30hs
-              </p>
-              <p class="text-white/70 font-medium italic">
-                Av. de los lagos 6785, Tigre, Buenos Aires.
-              </p>
-            </div>
-          </div>
+            ))
+          }
 
-          <div class="text-center">
+          <div class="text-center mt-2">
             <a
-              href="https://wa.me/5491128808666?text=Hola%2C+te+contacto+desde+la+pagina+web%2C+quisiera+solicitar+un+turno"
+              href={waLink("sección dónde atiendo")}
               target="_blank"
               rel="noopener noreferrer"
               title="Agendar consulta por WhatsApp"
               aria-label="Agendar consulta por WhatsApp"
-              class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+              data-track-label="sedes-whatsapp"
+              class="inline-block bg-brand text-brand-5 font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-2 hover:scale-105 shadow-lg w-full sm:w-auto"
             >
               Agendar consulta
             </a>
@@ -82,14 +79,14 @@
           <h2 class="font-extrabold text-3xl md:text-4xl text-white mb-4">
             Dónde opero
           </h2>
-          <p class="text-white/80 text-lg max-w-sm mx-auto">
+          <p class="text-white/90 text-lg max-w-sm mx-auto">
             Instituciones de alta complejidad donde realizo mis cirugías.
           </p>
         </div>
 
-        <div class="flex-1 grid gap-8">
+        <div class="flex-1 flex flex-col gap-6">
           <div
-            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center justify-center gap-6 border border-white/5"
+            class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl flex flex-col items-center justify-center gap-6 border border-white/10 flex-1"
           >
             <div class="hover:scale-105 transition-all duration-300">
               <img
@@ -103,21 +100,19 @@
               />
             </div>
             <div class="space-y-1 text-center">
-              <p
-                class="text-xs uppercase tracking-widest text-brand-2 font-bold"
-              >
+              <p class="text-xs uppercase tracking-widest text-brand font-bold">
                 Sedes habilitadas
               </p>
-              <p class="text-white/70 font-medium italic">
-                San Isidro · Nordelta · Angelus
+              <p class="text-white/90 font-medium italic">
+                San Isidro · Nordelta · Hills · Ángelus
               </p>
             </div>
           </div>
 
-          <div class="text-center">
+          <div class="text-center mt-2">
             <a
               href="/centros"
-              class="inline-block bg-brand-2 text-white font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-5 hover:scale-105 shadow-lg w-full sm:w-auto"
+              class="inline-block bg-brand text-brand-5 font-bold py-4 px-12 rounded-full transition-all duration-300 hover:bg-brand-2 hover:scale-105 shadow-lg w-full sm:w-auto"
             >
               Ver detalle de sedes
             </a>

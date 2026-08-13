@@ -1,0 +1,49 @@
+---
+import CallButton from "./CallButton.astro";
+import { OFFICE, waLink } from "../consts";
+
+interface Props {
+  title?: string;
+  text?: string;
+  source: string;
+}
+
+const {
+  title = "¿Querés evaluar tu caso?",
+  text = "Agendá una consulta y salí sabiendo qué opciones tenés y cuál es la más indicada para vos.",
+  source,
+} = Astro.props;
+---
+
+<section class="bg-gradient-to-b from-brand-4 to-brand-5 py-20">
+  <div class="max-w-3xl mx-auto px-6 text-center flex flex-col gap-6">
+    <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-extrabold text-brand">
+      {title}
+    </h2>
+    <p data-aos="fade-up" data-aos-delay="100" class="text-brand/80 text-lg">
+      {text}
+    </p>
+
+    <div
+      data-aos="fade-up"
+      data-aos-delay="200"
+      class="flex flex-col sm:flex-row gap-4 justify-center mt-2"
+    >
+      <a
+        href={waLink(source)}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track-label={`cta-${source}-whatsapp`}
+        title="Solicitar turno por WhatsApp con la Dra. Pamela J. Fernandez"
+        class="inline-flex items-center justify-center bg-[#25D366] text-white font-extrabold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#128C7E] shadow-lg"
+      >
+        Consultar por WhatsApp
+      </a>
+      <CallButton variant="dark" trackLabel={`cta-${source}-telefono`} />
+    </div>
+
+    <p class="text-brand/70 text-sm">
+      Consultorio en {OFFICE.locality} · {OFFICE.hoursDisplay}
+    </p>
+  </div>
+</section>

@@ -1,3 +1,24 @@
+---
+import { CREDENTIALS } from "../../consts";
+
+const formacion = [
+  { titulo: "Médica", institucion: "Universidad de Buenos Aires (UBA)" },
+  {
+    titulo: "Residencia en Cirugía General",
+    institucion:
+      'Hospital Interzonal General de Agudos "Eva Perón" (ex Castex), UBA',
+  },
+  {
+    titulo: "Fellowship en Cirugía Bariátrica",
+    institucion: "Hospital de Clínicas José de San Martín (UBA)",
+  },
+  {
+    titulo: "Diplomatura en Radiología Intervencionista",
+    institucion: "Universidad del Salvador (USAL)",
+  },
+];
+---
+
 <section
   id="sobre-mi"
   class="relative bg-gradient-to-b from-brand-1 to-brand-2 py-20 lg:py-28 overflow-hidden"
@@ -5,29 +26,33 @@
   <img
     src="/wave1.svg"
     alt=""
-    role="presentation"
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
     class="absolute top-0 left-0 w-full h-full object-cover"
     width="1920"
     height="1080"
   />
+
   <div
     class="shape-decorator absolute top-10 left-10 w-96 h-96
            border border-brand-5/10 rounded-3xl rotate-12"
+    aria-hidden="true"
   >
   </div>
 
   <div
     class="shape-decorator absolute bottom-10 -right-32 w-[28rem] h-[28rem]
            border border-brand-5/10 rounded-3xl -rotate-6"
+    aria-hidden="true"
   >
   </div>
 
-  <div class="px-8 md:px-72 mx-auto grid grid-cols-1 gap-5">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 grid gap-5">
     <div
       data-aos="zoom-in"
       data-aos-delay="100"
-      class="col-span-1 sm:col-span-2
-               bg-brand rounded-3xl p-6 flex flex-col gap-3"
+      class="bg-brand rounded-3xl p-6 md:p-8 flex flex-col gap-3"
     >
       <h2 class="text-3xl font-extrabold text-brand-5">
         Dra. Pamela J. Fernandez
@@ -35,21 +60,20 @@
       <p class="text-lg text-brand-5">
         Cirugía General, Bariátrica y Percutánea
       </p>
-      <p class="text-sm text-brand-5">
-        <strong class="font-bold">MP:</strong> 456054 <strong class="font-bold"
-          >MN:</strong
-        > 167712 · Cirugía General, Bariátrica y Percutánea
+      <p class="text-sm text-brand-5/80">
+        <strong class="font-bold">MN:</strong>
+        {CREDENTIALS.mn} · <strong class="font-bold">MP:</strong>
+        {CREDENTIALS.mp}
       </p>
     </div>
 
     <div
       data-aos="zoom-in"
       data-aos-delay="200"
-      class="col-span-1 sm:col-span-2
-               bg-brand rounded-3xl p-6
-               shadow-[0_20px_40px_-20px_rgba(0,0,0,0.2)]"
+      class="bg-brand rounded-3xl p-6 md:p-8
+             shadow-[0_20px_40px_-20px_rgba(0,0,0,0.2)] flex flex-col gap-4"
     >
-      <p class="text-lg text-brand-5/80 leading-relaxed mb-4">
+      <p class="text-lg text-brand-5/80 leading-relaxed">
         Brindo atención quirúrgica integral, combinando experiencia médica,
         precisión técnica y tecnología de vanguardia.
       </p>
@@ -64,26 +88,22 @@
     <div
       data-aos="zoom-in"
       data-aos-delay="300"
-      class="bg-brand rounded-3xl p-5"
+      class="bg-brand rounded-3xl p-6 md:p-8"
     >
-      <h3 class="font-semibold text-brand-5 mb-2 tracking-wide">Formación</h3>
-      <ul class="text-xs text-brand-5 space-y-1">
-        <li><strong class="font-bold text-sm">Médica</strong> - UBA</li>
-        <li>
-          <strong class="font-bold text-sm"
-            >Residencia en Cirugía General</strong
-          > - Hospital Interzonal General de Agudos "Eva Perón" (ex Castex) (UBA)
-        </li>
-        <li>
-          <strong class="font-bold text-sm"
-            >Fellowship en Cirugía Bariátrica
-          </strong> - Hospital de Clínicas José de San Martín (UBA)
-        </li>
-        <li>
-          <strong class="font-bold text-sm"
-            >Diplomatura en Radiología Intervencionista</strong
-          > - USAL
-        </li>
+      <h3 class="font-bold text-brand-5 mb-4 tracking-wide uppercase text-sm">
+        Formación
+      </h3>
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {
+          formacion.map((item) => (
+            <li class="text-sm text-brand-5/80">
+              <strong class="block font-bold text-brand-5">
+                {item.titulo}
+              </strong>
+              {item.institucion}
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

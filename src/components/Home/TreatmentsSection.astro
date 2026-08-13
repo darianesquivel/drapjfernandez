@@ -4,7 +4,7 @@ import TreatmentCard from "./TreatmentCard.astro";
 
 <section
   id="tratamientos"
-  class="relative py-12 lg:py-20 bg-gradient-to-b from-brand-2 to-brand-3 overflow-hidden"
+  class="relative py-12 lg:py-20 bg-gradient-to-b from-brand-2 to-brand-1 overflow-hidden"
 >
   <div
     class="relative max-w-6xl mx-auto px-6 flex flex-col items-center gap-10"
@@ -19,7 +19,7 @@ import TreatmentCard from "./TreatmentCard.astro";
       <p
         data-aos="fade-up"
         data-aos-delay="100"
-        class="text-brand-5/70 max-w-xl text-lg"
+        class="text-brand-5/90 max-w-xl text-lg"
       >
         Soluciones quirúrgicas adaptadas a cada paciente, con foco en seguridad,
         resultados y acompañamiento médico personalizado.
@@ -27,12 +27,12 @@ import TreatmentCard from "./TreatmentCard.astro";
     </div>
 
     <div
-      class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-6 gap-8 items-start w-full"
+      class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-start w-full"
     >
       <div
         data-aos="flip-left"
         data-aos-delay="200"
-        class="[@media(min-width:1000px)]:col-span-2 [@media(min-width:1000px)]:mt-32"
+        class="lg:col-span-2 lg:mt-32"
       >
         <TreatmentCard
           number="01"
@@ -42,7 +42,7 @@ import TreatmentCard from "./TreatmentCard.astro";
         />
       </div>
 
-      <div class="[@media(min-width:1000px)]:col-span-4 flex flex-col gap-8">
+      <div class="lg:col-span-4 flex flex-col gap-8">
         <div data-aos="flip-right" data-aos-delay="300">
           <TreatmentCard
             number="02"
@@ -55,7 +55,7 @@ import TreatmentCard from "./TreatmentCard.astro";
         <div
           data-aos="flip-left"
           data-aos-delay="400"
-          class="[@media(min-width:1000px)]:ml-24 [@media(min-width:1000px)]:max-w-md z-10"
+          class="lg:ml-24 lg:max-w-md z-10"
         >
           <TreatmentCard
             number="03"

@@ -1,82 +1,176 @@
 ---
 import Header from "../components/header/Header.astro";
 import Footer from "../components/footer/Footer.astro";
-import "../styles/global.css";
+import StructuredData from "../components/seo/StructuredData.astro";
 import WhatsappBtn from "../components/WhatsappBtn.astro";
+import { SITE } from "../consts";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  breadcrumbs?: { name: string; path: string }[];
+  faq?: { q: string; a: string }[];
+  noindex?: boolean;
+}
 
 const {
-  title = "Dra. Pamela J. Fernandez - Cirujana Gral. Bariátrica y Percutánea",
-  description = "Especialista en cirugía bariátrica, general y percutánea.",
+  title = SITE.defaultTitle,
+  description = SITE.defaultDescription,
+  image = "/og-image.png",
+  breadcrumbs,
+  faq,
+  noindex = false,
 } = Astro.props;
+
+// Canonical y og:url por página. Antes estaban fijos al home, lo que hacía que
+// Google tratara todas las URLs internas como duplicados de la portada.
+// Se normaliza con barra final para coincidir con las URLs que emite el sitemap
+// (Astro construye en formato de directorio: /centros/).
+const path = Astro.url.pathname.endsWith("/")
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const canonical = new URL(path, SITE.url).href;
+const ogImage = new URL(image, SITE.url).href;
+const isHome = Astro.url.pathname === "/";
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es-AR" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.drapjfernandez.com.ar" />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}
+    />
+    {!noindex && <link rel="canonical" href={canonical} />}
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={SITE.name} />
+    <meta name="theme-color" content="#f2ede9" />
 
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.drapjfernandez.com.ar" />
-    <meta
-      property="og:image"
-      content="https://www.drapjfernandez.com.ar/og-image.png"
-    />
+    <meta property="og:type" content={isHome ? "website" : "article"} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link
-      rel="preload"
-      as="image"
-      href="/hero-image.webp"
-      fetchpriority="high"
-    />
+    {
+      isHome && (
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-image.webp"
+          fetchpriority="high"
+        />
+      )
+    }
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/aos@next/dist/aos.css"
-      media="print"
-      onload="this.media='all'"
-    />
+    <StructuredData breadcrumbs={breadcrumbs} faq={faq} />
+
+    {/* Marca que hay JS antes del primer paint: sin esto el contenido con
+        data-aos quedaría oculto para siempre si el script fallara. */}
+    <script is:inline>
+      document.documentElement.classList.add("js-reveal");
+    </script>
   </head>
 
   <body class="bg-brand antialiased text-brand-5">
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[2000] focus:rounded-full focus:bg-brand-5 focus:px-5 focus:py-3 focus:text-white focus:font-bold"
+    >
+      Saltar al contenido principal
+    </a>
+
     <Header />
-    <main class="flex flex-col min-h-screen">
+
+    <main id="contenido" class="flex flex-col min-h-screen">
       <slot />
     </main>
+
     <Footer />
 
     <WhatsappBtn />
 
     <script>
-      const initAOS = async () => {
-        const { default: AOS } = await import("aos");
-        AOS.init({
-          duration: 600,
-          offset: 100,
-          once: true,
+      // Reveal on scroll. Reemplaza a AOS: sin dependencia externa, sin CDN,
+      // y respeta prefers-reduced-motion.
+      const initReveal = () => {
+        const items = document.querySelectorAll<HTMLElement>("[data-aos]");
+        if (!items.length) return;
+
+        const reduce = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        const revealAll = () =>
+          items.forEach((el) => el.classList.add("is-visible"));
+
+        if (reduce || !("IntersectionObserver" in window)) {
+          revealAll();
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+        );
+
+        items.forEach((el) => observer.observe(el));
+
+        // Red de seguridad: si algo impide que el observer dispare, nada queda
+        // invisible de forma permanente.
+        window.setTimeout(revealAll, 4000);
+      };
+
+      // Atribución de conversiones: cada click a WhatsApp/teléfono se reporta
+      // a GA4 (o al dataLayer) si hay analytics instalado. Es inerte si no.
+      const initConversionTracking = () => {
+        document.addEventListener("click", (event) => {
+          const link = (event.target as HTMLElement | null)?.closest?.("a");
+          if (!link) return;
+
+          const href = link.getAttribute("href") || "";
+          const isWhatsapp = href.includes("wa.me");
+          const isPhone = href.startsWith("tel:");
+          if (!isWhatsapp && !isPhone) return;
+
+          const payload = {
+            event_category: "contacto",
+            event_label:
+              link.dataset.trackLabel || link.textContent?.trim() || href,
+            page_path: window.location.pathname,
+          };
+          const name = isWhatsapp ? "click_whatsapp" : "click_telefono";
+
+          const w = window as any;
+          if (typeof w.gtag === "function") w.gtag("event", name, payload);
+          if (Array.isArray(w.dataLayer))
+            w.dataLayer.push({ event: name, ...payload });
         });
       };
 
-      const idleCallback =
-        window.requestIdleCallback || ((cb) => setTimeout(cb, 2000));
-
-      if (document.readyState === "complete") {
-        idleCallback(initAOS);
-      } else {
-        window.addEventListener("load", () => idleCallback(initAOS));
-      }
-
-      document.addEventListener("astro:after-swap", initAOS);
+      initReveal();
+      initConversionTracking();
     </script>
   </body>
 </html>

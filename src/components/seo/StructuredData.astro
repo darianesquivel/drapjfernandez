@@ -1,0 +1,129 @@
+---
+import {
+  SITE,
+  CONTACT,
+  OFFICE,
+  CREDENTIALS,
+  AREAS_SERVED,
+} from "../../consts";
+
+interface Props {
+  breadcrumbs?: { name: string; path: string }[];
+  faq?: { q: string; a: string }[];
+}
+
+const { breadcrumbs, faq } = Astro.props;
+
+const physicianId = `${SITE.url}/#physician`;
+
+const physician = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "@id": physicianId,
+  name: SITE.name,
+  alternateName: "Dra. Pamela Fernández",
+  url: SITE.url,
+  image: `${SITE.url}/hero-image.webp`,
+  logo: `${SITE.url}/logo.svg`,
+  telephone: CONTACT.phone,
+  description: SITE.defaultDescription,
+  medicalSpecialty: ["Surgical", "Gastroenterologic"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: OFFICE.street,
+    addressLocality: OFFICE.locality,
+    addressRegion: OFFICE.region,
+    postalCode: OFFICE.postalCode,
+    addressCountry: OFFICE.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: OFFICE.lat,
+    longitude: OFFICE.lng,
+  },
+  hasMap: OFFICE.mapsUrl,
+  openingHoursSpecification: OFFICE.hours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  areaServed: AREAS_SERVED.map((a) => ({ "@type": "City", name: a })),
+  identifier: [
+    { "@type": "PropertyValue", name: "Matrícula Nacional", value: CREDENTIALS.mn },
+    {
+      "@type": "PropertyValue",
+      name: "Matrícula Provincial",
+      value: CREDENTIALS.mp,
+    },
+  ],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Universidad de Buenos Aires" },
+    { "@type": "CollegeOrUniversity", name: "Universidad del Salvador" },
+  ],
+  availableService: [
+    {
+      "@type": "MedicalProcedure",
+      name: "Cirugía bariátrica",
+      url: `${SITE.url}/cirugia-bariatrica`,
+    },
+    {
+      "@type": "MedicalProcedure",
+      name: "Cirugía general y laparoscópica",
+      url: `${SITE.url}/cirugia-general`,
+    },
+    {
+      "@type": "MedicalProcedure",
+      name: "Cirugía percutánea guiada por imagen",
+      url: `${SITE.url}/cirugia-percutanea`,
+    },
+  ],
+};
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  url: SITE.url,
+  name: SITE.name,
+  inLanguage: "es-AR",
+  publisher: { "@id": physicianId },
+};
+
+const breadcrumbList = breadcrumbs?.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbs.map((b, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: b.name,
+        item: `${SITE.url}${b.path}`,
+      })),
+    }
+  : null;
+
+const faqPage = faq?.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    }
+  : null;
+
+const blocks = [physician, website, breadcrumbList, faqPage].filter(Boolean);
+---
+
+{
+  blocks.map((block) => (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(block)}
+      is:inline
+    />
+  ))
+}

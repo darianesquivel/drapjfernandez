@@ -1,0 +1,79 @@
+---
+interface Props {
+  src: string;
+  name: string;
+  address: string;
+}
+
+const { src, name, address } = Astro.props;
+
+// Se abre la ficha en Google Maps para quien prefiera no cargar el embed.
+const externalUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${name} ${address}`,
+)}`;
+---
+
+{/*
+  Fachada de mapa: en lugar de montar un iframe de Google Maps por tarjeta
+  (esta página tiene nueve), se muestra un placeholder liviano y el iframe se
+  inyecta recién al hacer click. Ahorra varios MB de descarga y evita que
+  Google reciba datos del visitante en cada carga de página.
+*/}
+<div class="map-embed h-56 w-full bg-brand-1 relative" data-map-src={src}>
+  <button
+    type="button"
+    class="map-facade group w-full h-full flex flex-col items-center justify-center gap-2 text-brand-5 transition-colors hover:bg-brand-2/60"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      class="transition-transform duration-300 group-hover:-translate-y-1"
+    >
+      <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+      <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+      ></path>
+    </svg>
+    <span class="text-xs font-bold uppercase tracking-widest">Ver mapa</span>
+    <span class="sr-only">de {name}</span>
+  </button>
+
+  <a
+    href={externalUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="absolute bottom-2 right-2 text-[10px] uppercase font-bold tracking-wide text-brand-5/70 hover:text-brand-5 underline underline-offset-2"
+  >
+    Abrir en Google Maps
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".map-embed").forEach((wrapper) => {
+    const button = wrapper.querySelector<HTMLButtonElement>(".map-facade");
+    const src = wrapper.dataset.mapSrc;
+    if (!button || !src) return;
+
+    button.addEventListener(
+      "click",
+      () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.title = button.textContent?.trim() || "Mapa";
+        iframe.className = "w-full h-full";
+        iframe.style.border = "0";
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        wrapper.replaceChildren(iframe);
+      },
+      { once: true },
+    );
+  });
+</script>

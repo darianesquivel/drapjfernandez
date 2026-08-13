@@ -1,3 +1,8 @@
+---
+import CallButton from "../CallButton.astro";
+import { OFFICE, waLink } from "../../consts";
+---
+
 <section
   id="contact"
   class="relative py-24 md:py-32 bg-gradient-to-b from-brand-4 to-brand-5 overflow-hidden"
@@ -15,31 +20,24 @@
     <p
       data-aos="fade-up"
       data-aos-delay="100"
-      class="text-brand text-lg md:text-xl max-w-2xl mx-auto"
+      class="text-brand/90 text-lg md:text-xl max-w-2xl mx-auto"
     >
       Consultas personalizadas, evaluación médica completa y acompañamiento
       integral en todo tu proceso quirúrgico.
     </p>
 
-    <p
+    <div
       data-aos="fade-up"
       data-aos-delay="200"
-      class="text-brand text-lg md:text-xl max-w-2xl mx-auto font-black uppercase tracking-tight"
-    >
-      ¡No esperes más!
-    </p>
-
-    <div
-      data-aos="zoom-out-up"
-      data-aos-delay="300"
-      class="flex flex-col sm:flex-row gap-6 justify-center mt-4"
+      class="flex flex-col sm:flex-row gap-4 justify-center mt-4"
     >
       <a
-        href="https://wa.me/5491128808666?text=Hola%2C+te+contacto+desde+la+pagina+web%2C+quisiera+solicitar+un+turno"
+        href={waLink("sección contacto")}
         target="_blank"
         rel="noopener noreferrer"
         title="Agendar turno por WhatsApp con la Dra. Pamela J. Fernandez"
         aria-label="Solicitar un turno médico vía WhatsApp"
+        data-track-label="contacto-whatsapp"
         class="inline-flex items-center justify-center gap-3
           bg-[#25D366] text-white
           font-extrabold text-lg
@@ -57,7 +55,6 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
           aria-hidden="true"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -68,6 +65,27 @@
         </svg>
         WhatsApp
       </a>
+
+      <CallButton variant="dark" trackLabel="contacto-telefono" />
     </div>
+
+    {/* Datos de contacto en texto plano: los buscadores los leen y los usuarios
+        los pueden copiar sin depender de un botón. */}
+    <address
+      data-aos="fade-up"
+      data-aos-delay="300"
+      class="not-italic text-brand/80 text-sm mt-4 flex flex-col gap-1"
+    >
+      <span>{OFFICE.street}, {OFFICE.locality}, {OFFICE.region}</span>
+      <span>{OFFICE.hoursDisplay}</span>
+      <a
+        href={OFFICE.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline underline-offset-4 hover:text-brand transition-colors"
+      >
+        Ver cómo llegar
+      </a>
+    </address>
   </div>
 </section>

@@ -1,6 +1,21 @@
-<footer class="bg-brand py-12 px-6 border-t border-white/5">
+---
+import { CONTACT, CREDENTIALS, OFFICE, waLink } from "../../consts";
+
+const links = [
+  { href: "/#home", label: "Inicio" },
+  { href: "/#sobre-mi", label: "Sobre mí" },
+  { href: "/cirugia-bariatrica", label: "Cirugía bariátrica" },
+  { href: "/cirugia-general", label: "Cirugía general" },
+  { href: "/cirugia-percutanea", label: "Cirugía percutánea" },
+  { href: "/centros", label: "Centros" },
+  { href: "/#preguntas-frecuentes", label: "Preguntas frecuentes" },
+  { href: "/#contact", label: "Contacto" },
+];
+---
+
+<footer class="bg-brand py-12 px-6 border-t border-brand-5/10">
   <div
-    class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+    class="max-w-6xl mx-auto grid gap-10 md:grid-cols-3 text-center md:text-left"
   >
     <div class="flex flex-col items-center md:items-start">
       <a href="/" title="Dra. Pamela J. Fernandez" class="mb-4">
@@ -13,34 +28,54 @@
           height="40"
         />
       </a>
-      <p class="text-brand-5 text-sm max-w-xs text-center md:text-left">
-        Especialista en Cirugía General, Bariátrica y Percutánea. MN 167712 / MP
-        456054.
+      <p class="text-brand-5 text-sm max-w-xs">
+        Especialista en Cirugía General, Bariátrica y Percutánea.
+      </p>
+      <p class="text-brand-5/70 text-xs mt-2">
+        MN {CREDENTIALS.mn} · MP {CREDENTIALS.mp}
       </p>
     </div>
 
     <nav
-      class="flex flex-wrap justify-center gap-6 text-brand-5 font-bold uppercase text-xs"
+      class="flex flex-col gap-2 text-brand-5 font-bold uppercase text-xs items-center md:items-start"
       aria-label="Navegación secundaria"
     >
-      <a href="/#home" class="hover:text-secondary transition-colors">Inicio</a>
-      <a href="/#sobre-mi" class="hover:text-secondary transition-colors"
-        >Sobre mi</a
-      >
-      <a href="/centros" class="hover:text-secondary transition-colors"
-        >Centros</a
-      >
-      <a href="/#tratamientos" class="hover:text-secondary transition-colors"
-        >Tratamientos</a
-      >
-      <a href="#contact" class="hover:text-secondary transition-colors"
-        >Contacto</a
-      >
+      {
+        links.map((link) => (
+          <a href={link.href} class="hover:text-brand-4 transition-colors">
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
+
+    {/* NAP (nombre, dirección, teléfono) consistente con el perfil de Google:
+        es una señal directa de SEO local. */}
+    <address class="not-italic flex flex-col gap-2 text-sm text-brand-5">
+      <p class="font-bold uppercase text-xs tracking-widest">Consultorio</p>
+      <p>{OFFICE.street}, {OFFICE.locality}, {OFFICE.region}</p>
+      <p class="text-brand-5/70">{OFFICE.hoursDisplay}</p>
+      <a
+        href={`tel:${CONTACT.phone}`}
+        data-track-label="footer-telefono"
+        class="font-bold hover:text-brand-4 transition-colors"
+      >
+        {CONTACT.phoneDisplay}
+      </a>
+      <a
+        href={waLink("footer")}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track-label="footer-whatsapp"
+        class="font-bold hover:text-brand-4 transition-colors"
+      >
+        WhatsApp
+      </a>
+    </address>
   </div>
 
   <div
-    class="max-w-6xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+    class="max-w-6xl mx-auto mt-10 pt-8 border-t border-brand-5/10 flex flex-col md:flex-row justify-between items-center gap-4"
   >
     <div class="text-center md:text-left text-[10px] md:text-xs text-brand-5">
       © {new Date().getFullYear()} Dra. Pamela J. Fernandez. Todos los derechos reservados.
@@ -53,7 +88,7 @@
         target="_blank"
         rel="noopener noreferrer"
         title="Just Darian - Desarrollo Web"
-        class="font-semibold text-brand-5 hover:text-secondary transition-colors"
+        class="font-semibold text-brand-5 hover:text-brand-4 transition-colors"
       >
         justdarian.com
       </a>
