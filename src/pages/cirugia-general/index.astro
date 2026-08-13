@@ -1,23 +1,32 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PageCta from "../../components/PageCta.astro";
+import { waLink } from "../../consts";
 ---
 
-<Layout title="Cirugía General y Laparoscópica | Dra. Pamela J. Fernandez">
+<Layout
+  title="Cirugía General y Laparoscópica | Dra. Pamela J. Fernandez"
+  description="Cirugía de vesícula, hernias inguinales, umbilicales y eventrales por laparoscopía, con seguimiento personalizado en Zona Norte y CABA."
+  breadcrumbs={[
+    { name: "Inicio", path: "/" },
+    { name: "Cirugía General", path: "/cirugia-general/" },
+  ]}
+>
   <section class="md:pt-40 pt-25 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2
+      <h1
         data-aos="fade-up"
         data-aos-delay="100"
-        class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+        class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-6"
       >
-        Tratamiento quirúrgico integral
-        <span class="text-brand-5"> con criterio médico</span>
-      </h2>
+        Cirugía general y laparoscópica
+        <span class="text-brand-4"> con criterio médico</span>
+      </h1>
 
       <p
         data-aos="fade-up"
         data-aos-delay="200"
-        class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+        class="text-lg md:text-xl text-brand-5/80 leading-relaxed max-w-3xl mx-auto"
       >
         Abordaje quirúrgico de patologías frecuentes y complejas, con técnicas
         actualizadas, mínima invasión y seguimiento personalizado liderado por
@@ -30,7 +39,9 @@ import Layout from "../../layouts/Layout.astro";
     <img
       src="/wave1.svg"
       alt=""
-      role="presentation"
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
       class="absolute top-0 left-0 w-full h-full object-cover"
     />
 
@@ -39,15 +50,15 @@ import Layout from "../../layouts/Layout.astro";
         <h2
           data-aos="fade-up"
           data-aos-delay="300"
-          class="text-3xl md:text-4xl font-bold text-gray-900 text-center"
+          class="text-3xl md:text-4xl font-bold text-brand-5 text-center"
         >
-          Cirugía <span class="text-brand-5">adaptada</span> a cada paciente
+          Cirugía <span class="text-brand-4">adaptada</span> a cada paciente
         </h2>
 
         <p
           data-aos="fade-up"
           data-aos-delay="400"
-          class="text-lg text-center text-gray-700 leading-relaxed max-w-4xl"
+          class="text-lg text-center text-brand-5/80 leading-relaxed max-w-4xl"
         >
           La cirugía general permite abordar múltiples patologías mediante
           diferentes técnicas quirúrgicas, seleccionadas de forma individual
@@ -56,38 +67,38 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <div
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-2 gap-10"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10"
       >
         <article
           data-aos="fade-up"
           data-aos-delay="300"
-          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center lg:items-start text-center lg:text-left"
         >
-          <h3 class="text-2xl font-bold text-gray-900">
+          <h3 class="text-2xl font-bold text-brand-5">
             Cirugía laparoscópica
           </h3>
 
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-brand-5/80 leading-relaxed">
             Técnica de mínima invasión que se realiza a través de pequeñas
             incisiones, utilizando una cámara y material quirúrgico específico
             para abordar la patología de forma precisa.
           </p>
 
           <div
-            class="w-full flex justify-center [@media(min-width:1000px)]:justify-start"
+            class="w-full flex justify-center lg:justify-start"
           >
-            <ul class="space-y-2 text-gray-700 font-medium text-left">
+            <ul class="space-y-2 text-brand-5/80 font-medium text-left">
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Menor impacto quirúrgico
+                <span class="text-brand-4" aria-hidden="true">•</span> Menor impacto quirúrgico
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Disminución del dolor postoperatorio
+                <span class="text-brand-4" aria-hidden="true">•</span> Disminución del dolor postoperatorio
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Menor tiempo de internación
+                <span class="text-brand-4" aria-hidden="true">•</span> Menor tiempo de internación
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Recuperación más rápida
+                <span class="text-brand-4" aria-hidden="true">•</span> Recuperación más rápida
               </li>
             </ul>
           </div>
@@ -96,31 +107,31 @@ import Layout from "../../layouts/Layout.astro";
         <article
           data-aos="fade-up"
           data-aos-delay="300"
-          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+          class="rounded-3xl bg-white p-8 shadow-sm space-y-5 border border-gray-100 flex flex-col items-center lg:items-start text-center lg:text-left"
         >
-          <h3 class="text-2xl font-bold text-gray-900">Cirugía abierta</h3>
+          <h3 class="text-2xl font-bold text-brand-5">Cirugía abierta</h3>
 
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-brand-5/80 leading-relaxed">
             Indicada en situaciones que requieren un abordaje quirúrgico
             convencional, ya sea por la complejidad del cuadro clínico o por
             características particulares del paciente.
           </p>
 
           <div
-            class="w-full flex justify-center [@media(min-width:1000px)]:justify-start"
+            class="w-full flex justify-center lg:justify-start"
           >
-            <ul class="space-y-2 text-gray-700 font-medium text-left">
+            <ul class="space-y-2 text-brand-5/80 font-medium text-left">
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Abordaje directo y seguro
+                <span class="text-brand-4" aria-hidden="true">•</span> Abordaje directo y seguro
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Indicada en cuadros complejos
+                <span class="text-brand-4" aria-hidden="true">•</span> Indicada en cuadros complejos
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Precisión técnica y control quirúrgico
+                <span class="text-brand-4" aria-hidden="true">•</span> Precisión técnica y control quirúrgico
               </li>
               <li class="flex gap-2">
-                <span class="text-brand-5">•</span> Mismo enfoque de cuidado integral
+                <span class="text-brand-4" aria-hidden="true">•</span> Mismo enfoque de cuidado integral
               </li>
             </ul>
           </div>
@@ -129,7 +140,7 @@ import Layout from "../../layouts/Layout.astro";
 
       <div
         data-aos="fade-up"
-        class="text-center text-gray-700 leading-relaxed max-w-3xl mx-auto"
+        class="text-center text-brand-5/80 leading-relaxed max-w-3xl mx-auto"
       >
         <p>
           Cada procedimiento se planifica de manera individual, con evaluación
@@ -140,13 +151,13 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-3">
+  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-1">
     <div data-aos="fade-up" class="max-w-5xl mx-auto px-6 space-y-20">
       <article
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Colecistectomía
           </h2>
           <p class="text-brand-5 text-sm font-bold uppercase tracking-wider">
@@ -155,7 +166,7 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Extracción de la vesícula biliar mediante técnica laparoscópica,
@@ -172,10 +183,10 @@ import Layout from "../../layouts/Layout.astro";
       <hr class="border-brand-5/30" />
 
       <article
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Reparación de hernias
           </h2>
           <p class="text-brand-5 text-sm font-bold uppercase tracking-wider">
@@ -184,7 +195,7 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Tratamiento quirúrgico de hernias inguinales, umbilicales e
@@ -199,19 +210,19 @@ import Layout from "../../layouts/Layout.astro";
       </article>
       <div class="flex justify-center">
         <a
-          href="https://wa.me/5491128808666?text=Hola%2C%20queria%20consultar%20por"
+          href={waLink("cirugía general - más tratamientos")}
           target="_blank"
           rel="noopener noreferrer"
           title="Solicitar turno por WhatsApp con la Dra. Pamela J. Fernandez"
           aria-label="Solicitar un turno médico vía WhatsApp"
+          data-track-label="general-mas-tratamientos"
           class="inline-flex items-center gap-3
-                 bg-brand-2 text-white
+                 bg-brand-4 text-white
                  font-bold text-sm px-6 py-2
                  rounded-full
                  transition-all duration-300
                  hover:scale-[1.04] hover:shadow-xl
                  hover:bg-brand-5
-                 focus:outline-none focus:ring-2 focus:ring-brand-4
                  active:scale-105 shadow-lg"
         >
           Consultar más tratamientos
@@ -219,4 +230,10 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </div>
   </section>
+
+  <PageCta
+    source="cirugía general"
+    title="¿Tenés que operarte de vesícula o una hernia?"
+    text="Agendá una consulta para evaluar tu caso y conocer el abordaje mínimamente invasivo más indicado."
+  />
 </Layout>

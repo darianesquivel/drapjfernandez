@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import "../../styles/global.css";
+import PageCta from "../../components/PageCta.astro";
+import MapEmbed from "../../components/MapEmbed.astro";
 
 const locations = [
   {
@@ -16,6 +17,15 @@ const locations = [
     mapEmbedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.687445903964!2d-58.65780522379377!3d-34.41018265147551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bda47d2a57173d%3A0x7d27e2a9b3a62858!2sSanatorio%20Las%20Lomas%20Nordelta!5e0!3m2!1ses-419!2sar!4v1750000000001!5m2!1ses-419!2sar",
     details: "Consultorios externos y guardia de baja complejidad.",
+  },
+  {
+    name: 'Hospital Interzonal General de Agudos "Eva Perón" (ex Castex)',
+    address:
+      "Av. Dr. Ricardo Balbín 3200, Gral. San Martín, Buenos Aires",
+    mapEmbedSrc:
+      "https://www.google.com/maps?q=Hospital+Interzonal+General+de+Agudos+Eva+Peron+ex+Castex,+Av.+Ricardo+Balbin+3200,+San+Martin&output=embed",
+    details:
+      "Hospital público de alta complejidad donde también realizo atención de consultorio.",
   },
   {
     name: "Clínica Ángelus",
@@ -73,19 +83,26 @@ const locationsV2 = [
 ];
 ---
 
-<Layout title="Sedes y Centros de Atención | Dra. Pamela J. Fernandez">
+<Layout
+  title="Centros donde opera y atiende | Dra. Pamela J. Fernandez"
+  description="Sanatorio Las Lomas (San Isidro, Nordelta, Hills), Clínica Ángelus, IMAC, Clínica del Sol y Sanatorio Finochietto: dónde atiende y opera la Dra. Fernandez."
+  breadcrumbs={[
+    { name: "Inicio", path: "/" },
+    { name: "Centros", path: "/centros/" },
+  ]}
+>
   <section
     id="locations"
     class="py-20 lg:py-28 bg-gradient-to-b from-brand-1 to-brand-2"
   >
     <div class="max-w-6xl py-10 mx-auto px-6 flex flex-col gap-10">
       <header class="text-center flex flex-col gap-4">
-        <h2
+        <h1
           data-aos="fade-up"
           class="text-4xl md:text-5xl font-extrabold text-brand-5"
         >
-          Lugares de Atención
-        </h2>
+          Centros donde atiendo y opero
+        </h1>
         <p
           data-aos="fade-up"
           data-aos-delay="100"
@@ -97,10 +114,10 @@ const locationsV2 = [
       </header>
 
       <div
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-12"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-12"
       >
         {
-          locations.map((loc, index) => (
+          locations.map((loc) => (
             <article
               data-aos="fade-up"
               data-aos-delay="200"
@@ -110,23 +127,18 @@ const locationsV2 = [
                    transition-all duration-300
                    hover:shadow-xl"
             >
-              <div class="h-56 w-full bg-gray-100">
-                <iframe
-                  title={`Ubicación de ${loc.name}`}
-                  src={loc.mapEmbedSrc}
-                  class="w-full h-full"
-                  style="border:0;"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                />
-              </div>
+              <MapEmbed
+                src={loc.mapEmbedSrc}
+                name={loc.name}
+                address={loc.address}
+              />
 
               <div class="p-6 flex flex-col gap-3">
-                <h2 class="text-xl font-bold text-brand-5 leading-tight">
+                <h3 class="text-xl font-bold text-brand-5 leading-tight">
                   {loc.name}
-                </h2>
-                <p class="text-sm text-gray-600 font-medium">{loc.address}</p>
-                <p class="text-sm text-gray-500 italic leading-relaxed">
+                </h3>
+                <p class="text-sm text-brand-5/80 font-medium">{loc.address}</p>
+                <p class="text-sm text-brand-5/60 italic leading-relaxed">
                   {loc.details}
                 </p>
               </div>
@@ -146,10 +158,10 @@ const locationsV2 = [
         </h2>
       </header>
       <div
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-12"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-12"
       >
         {
-          locationsV2.map((loc, index) => (
+          locationsV2.map((loc) => (
             <article
               data-aos="fade-up"
               data-aos-delay="200"
@@ -159,23 +171,18 @@ const locationsV2 = [
                    transition-all duration-300
                    hover:shadow-xl"
             >
-              <div class="h-56 w-full bg-gray-100">
-                <iframe
-                  title={`Mapa interactivo de ${loc.name}`}
-                  src={loc.mapEmbedSrc}
-                  class="w-full h-full"
-                  style="border:0;"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                />
-              </div>
+              <MapEmbed
+                src={loc.mapEmbedSrc}
+                name={loc.name}
+                address={loc.address}
+              />
 
               <div class="p-6 flex flex-col gap-3">
                 <h3 class="text-xl font-bold text-brand-5 leading-tight">
                   {loc.name}
                 </h3>
-                <p class="text-sm text-gray-600 font-medium">{loc.address}</p>
-                <p class="text-sm text-gray-500 italic leading-relaxed">
+                <p class="text-sm text-brand-5/80 font-medium">{loc.address}</p>
+                <p class="text-sm text-brand-5/60 italic leading-relaxed">
                   {loc.details}
                 </p>
               </div>
@@ -185,4 +192,10 @@ const locationsV2 = [
       </div>
     </div>
   </section>
+
+  <PageCta
+    source="centros"
+    title="¿Querés coordinar tu consulta?"
+    text="Escribinos y te indicamos el centro más conveniente según tu cobertura y tu zona."
+  />
 </Layout>

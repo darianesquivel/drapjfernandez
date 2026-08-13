@@ -1,23 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PageCta from "../../components/PageCta.astro";
 ---
 
 <Layout
-  title="Cirugía Bariátrica y Tratamiento de la Obesidad | Dra. Pamela J. Fernandez"
+  title="Cirugía Bariátrica en Zona Norte y CABA | Dra. Pamela J. Fernandez"
+  description="Manga gástrica, bypass, balón gástrico y endosleeve con equipo interdisciplinario. Cirujana bariátrica en Nordelta, San Isidro y CABA."
+  breadcrumbs={[
+    { name: "Inicio", path: "/" },
+    { name: "Cirugía Bariátrica", path: "/cirugia-bariatrica/" },
+  ]}
 >
   <section class="md:pt-40 pt-25 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2
+      <h1
         data-aos="fade-up"
-        class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+        class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-6"
       >
-        Abordaje integral de la obesidad
-        <span class="text-brand-5"> basado en trabajo interdisciplinario</span>
-      </h2>
+        Cirugía bariátrica:
+        <span class="text-brand-4"> abordaje integral de la obesidad</span>
+      </h1>
 
       <p
         data-aos="fade-up"
-        class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+        class="text-lg md:text-xl text-brand-5/80 leading-relaxed max-w-3xl mx-auto"
       >
         Tratamiento médico y quirúrgico de la obesidad con un enfoque
         personalizado, seguro y sostenido en el tiempo, liderado por la Dra.
@@ -30,21 +36,23 @@ import Layout from "../../layouts/Layout.astro";
     <img
       src="/wave1.svg"
       alt=""
-      role="presentation"
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
       class="absolute top-0 left-0 w-full h-full object-cover"
     />
     <div class="relative z-10 max-w-6xl mx-auto px-6 space-y-16">
       <div class="space-y-4 flex flex-col items-center">
         <h2
           data-aos="fade-up"
-          class="text-3xl md:text-4xl font-extrabold text-gray-900 text-center"
+          class="text-3xl md:text-4xl font-extrabold text-brand-5 text-center"
         >
-          Equipo de Cirugía <span class="text-brand-5">Bariátrica</span>
+          Equipo de Cirugía <span class="text-brand-4">Bariátrica</span>
         </h2>
 
         <p
           data-aos="fade-up"
-          class="text-gray-700 leading-relaxed text-center max-w-3xl"
+          class="text-brand-5/80 leading-relaxed text-center max-w-3xl"
         >
           La cirugía bariátrica requiere un abordaje interdisciplinario. El
           tratamiento se realiza a través de un equipo médico especializado que
@@ -61,9 +69,12 @@ import Layout from "../../layouts/Layout.astro";
           >
             <img
               src="/bariatricaintegral-logo.png"
-              alt="Logo Bariátrica Integral"
+              alt="Bariátrica Integral - equipo interdisciplinario de cirugía bariátrica"
               class="h-16 md:h-20 w-auto object-contain transition-all duration-500 opacity-80 group-hover:opacity-100 rounded-2xl"
               loading="lazy"
+              decoding="async"
+              width="274"
+              height="87"
             />
           </a>
         </div>
@@ -72,7 +83,7 @@ import Layout from "../../layouts/Layout.astro";
       <div class="space-y-8 flex flex-col items-center">
         <h3
           data-aos="fade-up"
-          class="text-xl font-bold text-gray-900 uppercase tracking-wider"
+          class="text-xl font-bold text-brand-5 uppercase tracking-wider"
         >
           Equipo principal
         </h3>
@@ -84,7 +95,7 @@ import Layout from "../../layouts/Layout.astro";
             data-aos="fade-up"
             class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <h4 class="font-bold text-lg text-gray-900">
+            <h4 class="font-bold text-lg text-brand-5">
               Dra. Pamela Fernández
             </h4>
             <p class="text-sm font-semibold text-brand-5">Médica Cirujana</p>
@@ -94,7 +105,7 @@ import Layout from "../../layouts/Layout.astro";
             data-aos="fade-up"
             class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <h4 class="font-bold text-lg text-gray-900">Dr. Lucas Travieso</h4>
+            <h4 class="font-bold text-lg text-brand-5">Dr. Lucas Travieso</h4>
             <p class="text-sm font-semibold text-brand-5">Médico Cirujano</p>
           </div>
 
@@ -102,7 +113,7 @@ import Layout from "../../layouts/Layout.astro";
             data-aos="fade-up"
             class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <h4 class="font-bold text-lg text-gray-900">
+            <h4 class="font-bold text-lg text-brand-5">
               Lic. Fernanda González
             </h4>
             <p class="text-sm font-semibold text-brand-5">Nutricionista</p>
@@ -112,7 +123,7 @@ import Layout from "../../layouts/Layout.astro";
             data-aos="fade-up"
             class="rounded-2xl bg-brand-2 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <h4 class="font-bold text-lg text-gray-900">
+            <h4 class="font-bold text-lg text-brand-5">
               Lic. Natalia Beitone
             </h4>
             <p class="text-sm font-semibold text-brand-5">Psicóloga</p>
@@ -121,7 +132,7 @@ import Layout from "../../layouts/Layout.astro";
       </div>
 
       <div data-aos="fade-up" class="space-y-8 flex flex-col items-center">
-        <h3 class="text-xl font-bold text-gray-900 uppercase tracking-wider">
+        <h3 class="text-xl font-bold text-brand-5 uppercase tracking-wider">
           Especialidades de apoyo
         </h3>
 
@@ -131,36 +142,36 @@ import Layout from "../../layouts/Layout.astro";
           <div
             class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <p class="font-semibold text-gray-900">Dra. Lucía Domingo</p>
-            <p class="text-sm text-gray-700">Ginecología</p>
+            <p class="font-semibold text-brand-5">Dra. Lucía Domingo</p>
+            <p class="text-sm text-brand-5/80">Ginecología</p>
           </div>
 
           <div
             class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <p class="font-semibold text-gray-900">Dra. Adriana Fiore</p>
-            <p class="text-sm text-gray-700">Clínica Médica y Endocrinología</p>
+            <p class="font-semibold text-brand-5">Dra. Adriana Fiore</p>
+            <p class="text-sm text-brand-5/80">Clínica Médica y Endocrinología</p>
           </div>
 
           <div
             class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <p class="font-semibold text-gray-900">Dra. Estrella Garofalo</p>
-            <p class="text-sm text-gray-700">Psiquiatría</p>
+            <p class="font-semibold text-brand-5">Dra. Estrella Garofalo</p>
+            <p class="text-sm text-brand-5/80">Psiquiatría</p>
           </div>
 
           <div
             class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <p class="font-semibold text-gray-900">Dra. Marcela Deleu</p>
-            <p class="text-sm text-gray-700">Cardiología</p>
+            <p class="font-semibold text-brand-5">Dra. Marcela Deleu</p>
+            <p class="text-sm text-brand-5/80">Cardiología</p>
           </div>
           <div
             class="rounded-2xl bg-brand/50 backdrop-blur-sm p-6 shadow-sm text-center flex flex-col justify-center items-center"
           >
-            <p class="font-semibold text-gray-900">Dra. Samanta Smith</p>
-            <p class="text-sm text-gray-700">Clínica nutricionista</p>
-            <p class="text-xs text-gray-700">
+            <p class="font-semibold text-brand-5">Dra. Samanta Smith</p>
+            <p class="text-sm text-brand-5/80">Clínica nutricionista</p>
+            <p class="text-xs text-brand-5/80">
               Especialista en diabetología y obesidad
             </p>
           </div>
@@ -169,17 +180,17 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-3">
+  <section class="py-10 pb-20 bg-gradient-to-b from-brand-2 to-brand-1">
     <div class="max-w-5xl mx-auto px-6 space-y-20">
       <article
         data-aos="fade-up"
         class="grid gap-8 items-center text-center
-               [@media(min-width:1000px)]:grid-cols-3
-               [@media(min-width:1000px)]:items-start
-               [@media(min-width:1000px)]:text-left"
+               lg:grid-cols-3
+               lg:items-start
+               lg:text-left"
       >
         <header class="space-y-2">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5">
             Tratamiento farmacológico
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -188,8 +199,8 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="space-y-4 text-gray-700 leading-relaxed
-                 [@media(min-width:1000px)]:col-span-2"
+          class="space-y-4 text-brand-5/80 leading-relaxed
+                 lg:col-span-2"
         >
           <p>
             Indicado en pacientes seleccionados, el tratamiento farmacológico
@@ -200,7 +211,7 @@ import Layout from "../../layouts/Layout.astro";
             Se utilizan fármacos aprobados con respaldo científico,
             seleccionados según las necesidades clínicas de cada paciente.
           </p>
-          <p class="italic text-sm text-gray-500">
+          <p class="italic text-sm text-brand-5/60">
             *Se trabaja con distintas opciones farmacológicas bajo estricta
             indicación médica.
           </p>
@@ -212,12 +223,12 @@ import Layout from "../../layouts/Layout.astro";
       <article
         data-aos="fade-up"
         class="grid gap-8 items-center text-center
-               [@media(min-width:1000px)]:grid-cols-3
-               [@media(min-width:1000px)]:items-start
-               [@media(min-width:1000px)]:text-left"
+               lg:grid-cols-3
+               lg:items-start
+               lg:text-left"
       >
         <header class="space-y-2">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5">
             Tratamiento endoscópico
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -226,8 +237,8 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="space-y-6 text-gray-700 leading-relaxed
-                 [@media(min-width:1000px)]:col-span-2"
+          class="space-y-6 text-brand-5/80 leading-relaxed
+                 lg:col-span-2"
         >
           <p>
             Los procedimientos endoscópicos son intervenciones mínimamente
@@ -239,8 +250,8 @@ import Layout from "../../layouts/Layout.astro";
 
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="bg-white/40 p-4 rounded-xl">
-              <h3 class="font-bold text-gray-900 mb-2">Balón gástrico</h3>
-              <p class="text-sm text-gray-600">
+              <h3 class="font-bold text-brand-5 mb-2">Balón gástrico</h3>
+              <p class="text-sm text-brand-5/80">
                 Colocación temporal de un dispositivo inflable en el estómago
                 que genera saciedad precoz y ayuda a reeducar hábitos
                 alimentarios.
@@ -248,10 +259,10 @@ import Layout from "../../layouts/Layout.astro";
             </div>
 
             <div class="bg-white/40 p-4 rounded-xl">
-              <h3 class="font-bold text-gray-900 mb-2">
+              <h3 class="font-bold text-brand-5 mb-2">
                 Manga gástrica endoscópica
               </h3>
-              <p class="text-sm text-gray-600">
+              <p class="text-sm text-brand-5/80">
                 Conocida como <strong>Endosleeve</strong>, consiste en realizar
                 suturas internas en el estómago para reducir su capacidad sin
                 necesidad de cirugía.
@@ -266,12 +277,12 @@ import Layout from "../../layouts/Layout.astro";
       <article
         data-aos="fade-up"
         class="grid gap-8 items-center text-center
-               [@media(min-width:1000px)]:grid-cols-3
-               [@media(min-width:1000px)]:items-start
-               [@media(min-width:1000px)]:text-left"
+               lg:grid-cols-3
+               lg:items-start
+               lg:text-left"
       >
         <header class="space-y-2">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5">
             Tratamiento quirúrgico
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -280,8 +291,8 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="space-y-6 text-gray-700 leading-relaxed
-                 [@media(min-width:1000px)]:col-span-2"
+          class="space-y-6 text-brand-5/80 leading-relaxed
+                 lg:col-span-2"
         >
           <p>
             La cirugía bariátrica es la opción más efectiva para pacientes con
@@ -291,16 +302,16 @@ import Layout from "../../layouts/Layout.astro";
 
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="bg-white/40 p-4 rounded-xl">
-              <h3 class="font-bold text-gray-900 mb-2">Manga gástrica</h3>
-              <p class="text-sm text-gray-600">
+              <h3 class="font-bold text-brand-5 mb-2">Manga gástrica</h3>
+              <p class="text-sm text-brand-5/80">
                 Procedimiento que reduce el tamaño del estómago, limitando la
                 ingesta y regulando hormonas del hambre.
               </p>
             </div>
 
             <div class="bg-white/40 p-4 rounded-xl">
-              <h3 class="font-bold text-gray-900 mb-2">Bypass gástrico</h3>
-              <p class="text-sm text-gray-600">
+              <h3 class="font-bold text-brand-5 mb-2">Bypass gástrico</h3>
+              <p class="text-sm text-brand-5/80">
                 Combina la reducción gástrica con una modificación del tránsito
                 intestinal para un máximo impacto metabólico.
               </p>
@@ -314,12 +325,12 @@ import Layout from "../../layouts/Layout.astro";
       <article
         data-aos="fade-up"
         class="grid gap-8 items-center text-center
-               [@media(min-width:1000px)]:grid-cols-3
-               [@media(min-width:1000px)]:items-start
-               [@media(min-width:1000px)]:text-left"
+               lg:grid-cols-3
+               lg:items-start
+               lg:text-left"
       >
         <header class="space-y-2">
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5">
             Cirugías de revisión
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -328,8 +339,8 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="space-y-4 text-gray-700 leading-relaxed
-                 [@media(min-width:1000px)]:col-span-2"
+          class="space-y-4 text-brand-5/80 leading-relaxed
+                 lg:col-span-2"
         >
           <p>
             Indicadas en pacientes que ya cuentan con una cirugía previa y
@@ -343,4 +354,10 @@ import Layout from "../../layouts/Layout.astro";
       </article>
     </div>
   </section>
+
+  <PageCta
+    source="cirugía bariátrica"
+    title="¿Querés saber si sos candidato/a?"
+    text="En la primera consulta evaluamos tu historia clínica y te explicamos qué opciones tenés, cómo es el proceso y cómo gestionar la cobertura."
+  />
 </Layout>

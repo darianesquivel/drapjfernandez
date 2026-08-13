@@ -1,0 +1,63 @@
+---
+import { FAQ } from "../../data/faq";
+import { waLink } from "../../consts";
+---
+
+<section
+  id="preguntas-frecuentes"
+  class="relative py-20 lg:py-28 bg-gradient-to-b from-brand to-brand-1"
+>
+  <div class="max-w-3xl mx-auto px-6 flex flex-col gap-10">
+    <div class="text-center flex flex-col gap-4">
+      <h2
+        data-aos="fade-up"
+        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-5"
+      >
+        Preguntas frecuentes
+      </h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-brand-5/70 text-lg">
+        Las dudas que más nos llegan antes de la primera consulta.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-3" data-aos="fade-up" data-aos-delay="200">
+      {
+        FAQ.map((item) => (
+          <details class="group bg-brand rounded-2xl border border-brand-5/10 overflow-hidden">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 font-bold text-brand-5 hover:bg-brand-2/30 transition-colors">
+              <h3 class="text-base md:text-lg font-bold">{item.q}</h3>
+              <span
+                aria-hidden="true"
+                class="shrink-0 text-2xl leading-none text-brand-4 transition-transform duration-300 group-open:rotate-45"
+              >
+                +
+              </span>
+            </summary>
+            <p class="px-6 pb-6 text-brand-5/80 leading-relaxed">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+
+    <p class="text-center text-brand-5/70">
+      ¿Tu pregunta no está acá?{" "}
+      <a
+        href={waLink("preguntas frecuentes")}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track-label="faq-whatsapp"
+        class="font-bold text-brand-4 underline underline-offset-4 hover:text-brand-5 transition-colors"
+      >
+        Escribinos por WhatsApp
+      </a>
+      .
+    </p>
+  </div>
+</section>
+
+<style>
+  /* Safari muestra su propio triángulo en <summary> si no se lo desactiva. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

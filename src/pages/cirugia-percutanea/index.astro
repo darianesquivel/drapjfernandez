@@ -1,23 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import PageCta from "../../components/PageCta.astro";
 ---
 
 <Layout
-  title="Cirugía Percutánea e Intervencionismo | Dra. Pamela J. Fernandez"
+  title="Cirugía Percutánea Guiada por Imagen | Dra. P. Fernandez"
+  description="Biopsias, drenajes y punciones guiadas por ecografía, radiografía o tomografía. Procedimientos ambulatorios en Zona Norte y CABA."
+  breadcrumbs={[
+    { name: "Inicio", path: "/" },
+    { name: "Cirugía Percutánea", path: "/cirugia-percutanea/" },
+  ]}
 >
   <section class="md:pt-40 pt-25 bg-brand">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2
+      <h1
         data-aos="fade-up"
-        class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+        class="text-4xl md:text-5xl font-extrabold text-brand-5 mb-6"
       >
-        Procedimientos mínimamente invasivos
-        <span class="text-brand-5"> guiados por imagen</span>
-      </h2>
+        Cirugía percutánea:
+        <span class="text-brand-4"> procedimientos guiados por imagen</span>
+      </h1>
 
       <p
         data-aos="fade-up"
-        class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+        class="text-lg md:text-xl text-brand-5/80 leading-relaxed max-w-3xl mx-auto"
       >
         Tratamientos diagnósticos y terapéuticos realizados mediante punción,
         con control ecográfico o radiológico, reduciendo el trauma quirúrgico y
@@ -30,10 +36,10 @@ import Layout from "../../layouts/Layout.astro";
     <div class="max-w-5xl mx-auto px-6 space-y-20">
       <article
         data-aos="fade-up"
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Biopsias percutáneas
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -42,7 +48,7 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Obtención de muestras de tejido mediante punción, guiada por
@@ -60,16 +66,16 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Drenajes percutáneos
           </h2>
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Colocación de catéteres de drenaje mediante punción para el
@@ -87,10 +93,10 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Punciones diagnósticas
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -99,7 +105,7 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Punciones realizadas con fines diagnósticos o terapéuticos en
@@ -118,10 +124,10 @@ import Layout from "../../layouts/Layout.astro";
 
       <article
         data-aos="fade-up"
-        class="grid grid-cols-1 [@media(min-width:1000px)]:grid-cols-3 gap-8 items-center [@media(min-width:1000px)]:items-start text-center [@media(min-width:1000px)]:text-left"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:items-start text-center lg:text-left"
       >
         <header>
-          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-5 mb-2">
             Intervencionismo guiado
           </h2>
           <p class="text-sm font-bold text-brand-5 uppercase tracking-wide">
@@ -130,7 +136,7 @@ import Layout from "../../layouts/Layout.astro";
         </header>
 
         <div
-          class="[@media(min-width:1000px)]:col-span-2 text-gray-700 leading-relaxed space-y-4"
+          class="lg:col-span-2 text-brand-5/80 leading-relaxed space-y-4"
         >
           <p>
             Intervenciones realizadas con apoyo de ecografía y radiología,
@@ -145,4 +151,10 @@ import Layout from "../../layouts/Layout.astro";
       </article>
     </div>
   </section>
+
+  <PageCta
+    source="cirugía percutánea"
+    title="¿Necesitás una biopsia, un drenaje o una punción?"
+    text="Consultá por procedimientos ambulatorios guiados por imagen, con estudio previo y seguimiento incluido."
+  />
 </Layout>

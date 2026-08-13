@@ -3,13 +3,103 @@
 /* COLORS */
 @theme {
   --color-brand: #f2ede9;
+  --color-brand-1: #eae1da;
   --color-brand-2: #dbc2a9;
   --color-brand-3: #ac8c6e;
   --color-brand-4: #86674b;
   --color-brand-5: #533c27;
-  --color-cta: #673de6;
+
+  /* El layout fue diseñado con un corte en 1000px, no en el 1024px por
+     defecto de Tailwind. Se redefine acá para poder usar `lg:` en todo el
+     markup en lugar de repetir la media query a mano. */
+  --breakpoint-lg: 1000px;
 }
 
 html {
   scrollbar-gutter: stable;
+}
+
+/* Foco visible y consistente en todo el sitio (accesibilidad de teclado). */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-brand-5);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Ancla de scroll: compensa el header fijo al saltar a #secciones. */
+:target {
+  scroll-margin-top: 6rem;
+}
+
+/*
+ * REVEAL ON SCROLL
+ * Reemplaza a la librería AOS (que se cargaba desde un CDN externo).
+ * El estado oculto sólo se aplica si `js-reveal` está presente en <html>,
+ * clase que agrega un script inline en el <head>. Si el JS falla o está
+ * deshabilitado, el contenido queda visible en lugar de desaparecer.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal [data-aos] {
+    opacity: 0;
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .js-reveal [data-aos="fade-up"],
+  .js-reveal [data-aos="zoom-out-up"] {
+    transform: translateY(24px);
+  }
+  .js-reveal [data-aos="fade-down"] {
+    transform: translateY(-24px);
+  }
+  .js-reveal [data-aos="fade-right"] {
+    transform: translateX(-32px);
+  }
+  .js-reveal [data-aos="fade-left"] {
+    transform: translateX(32px);
+  }
+  .js-reveal [data-aos="zoom-in"] {
+    transform: scale(0.94);
+  }
+  .js-reveal [data-aos="zoom-out-up"] {
+    transform: translateY(24px) scale(1.04);
+  }
+  .js-reveal [data-aos="flip-left"] {
+    transform: perspective(1000px) rotateY(12deg);
+  }
+  .js-reveal [data-aos="flip-right"] {
+    transform: perspective(1000px) rotateY(-12deg);
+  }
+
+  .js-reveal [data-aos-delay="100"] {
+    transition-delay: 0.1s;
+  }
+  .js-reveal [data-aos-delay="200"] {
+    transition-delay: 0.2s;
+  }
+  .js-reveal [data-aos-delay="300"] {
+    transition-delay: 0.3s;
+  }
+  .js-reveal [data-aos-delay="400"] {
+    transition-delay: 0.4s;
+  }
+
+  .js-reveal [data-aos].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respeta la preferencia del sistema: sin animaciones decorativas. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

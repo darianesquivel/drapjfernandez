@@ -1,10 +1,18 @@
+---
+import { waLink } from "../consts";
+
+// Identifica desde qué página salió el click para poder atribuir la consulta.
+const source = `botón flotante ${Astro.url.pathname}`;
+---
+
 <div class="fixed bottom-6 right-6 z-[60]">
   <a
-    href="https://wa.me/5491128808666?text=Hola%2C+te+contacto+desde+la+pagina+web%2C+quisiera+solicitar+un+turno"
+    href={waLink(source)}
     target="_blank"
     rel="noopener noreferrer"
     title="Contactar a la Dra. Pamela J. Fernandez por WhatsApp"
     aria-label="Enviar mensaje de WhatsApp"
+    data-track-label="boton-flotante"
     class="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl transition-transform duration-300 hover:scale-110 active:scale-95"
   >
     <span

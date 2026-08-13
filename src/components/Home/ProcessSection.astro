@@ -1,0 +1,106 @@
+---
+import { COBERTURAS } from "../../data/coberturas";
+import { waLink } from "../../consts";
+
+const steps = [
+  {
+    number: "01",
+    title: "Primera consulta",
+    text: "Evaluamos tu historia clínica, tus estudios previos y tus objetivos. Salís de la consulta sabiendo qué opciones tenés y cuál es la más indicada para tu caso.",
+  },
+  {
+    number: "02",
+    title: "Estudios y preparación",
+    text: "Se solicita el prequirúrgico y, cuando corresponde, las evaluaciones del equipo interdisciplinario. En paralelo gestionamos la documentación para tu cobertura.",
+  },
+  {
+    number: "03",
+    title: "Cirugía y seguimiento",
+    text: "La intervención se realiza en centros de alta complejidad. Después seguimos acompañándote en los controles postoperatorios el tiempo que haga falta.",
+  },
+];
+---
+
+<section
+  id="como-trabajo"
+  class="relative py-20 lg:py-28 bg-gradient-to-b from-brand-4 to-brand-5"
+>
+  <div class="max-w-5xl mx-auto px-6 flex flex-col gap-12">
+    <div class="text-center flex flex-col gap-4">
+      <h2
+        data-aos="fade-up"
+        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand"
+      >
+        Cómo es el proceso
+      </h2>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="text-brand/80 text-lg max-w-2xl mx-auto"
+      >
+        Tres etapas claras, sin sorpresas, desde el primer mensaje hasta el
+        último control.
+      </p>
+    </div>
+
+    <ol class="grid gap-6 md:grid-cols-3">
+      {
+        steps.map((step, index) => (
+          <li
+            data-aos="fade-up"
+            data-aos-delay={`${(index + 2) * 100}`}
+            class="bg-brand/10 border border-brand/15 rounded-3xl p-8 flex flex-col gap-3"
+          >
+            <span
+              aria-hidden="true"
+              class="text-4xl font-extrabold text-brand/40"
+            >
+              {step.number}
+            </span>
+            <h3 class="text-xl font-extrabold text-brand">{step.title}</h3>
+            <p class="text-brand/80 leading-relaxed">{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div
+      data-aos="fade-up"
+      class="bg-brand/10 border border-brand/15 rounded-3xl p-8 text-center flex flex-col gap-4"
+    >
+      <h3 class="text-xl font-extrabold text-brand">Cobertura médica</h3>
+      {
+        COBERTURAS.length > 0 ? (
+          <>
+            <p class="text-brand/80">Trabajo con las siguientes coberturas:</p>
+            <ul class="flex flex-wrap justify-center gap-3">
+              {COBERTURAS.map((c) => (
+                <li class="bg-brand/15 text-brand font-semibold text-sm px-4 py-2 rounded-full">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p class="text-brand/80 max-w-2xl mx-auto leading-relaxed">
+            El tratamiento quirúrgico de la obesidad está incluido en el
+            Programa Médico Obligatorio (Ley 26.396) para pacientes que cumplen
+            los criterios establecidos. Escribinos con el nombre de tu obra
+            social o prepaga y te contamos cómo es el circuito de autorización.
+          </p>
+        )
+      }
+      <div>
+        <a
+          href={waLink("cobertura")}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track-label="cobertura-whatsapp"
+          class="inline-block bg-brand text-brand-5 font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+        >
+          Consultar mi cobertura
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -4,13 +4,18 @@ import Hero from "../components/Home/Hero.astro";
 import AboutMe from "../components/Home/AboutMe.astro";
 import Contact from "../components/Home/Contact.astro";
 import TreatmentsSection from "../components/Home/TreatmentsSection.astro";
+import ProcessSection from "../components/Home/ProcessSection.astro";
 import PracticeLocationsSection from "../components/Home/PracticeLocationsSection.astro";
+import FaqSection from "../components/Home/FaqSection.astro";
+import { FAQ } from "../data/faq";
 ---
 
-<Layout>
+<Layout faq={FAQ}>
   <Hero />
   <AboutMe />
   <TreatmentsSection />
+  <ProcessSection />
   <PracticeLocationsSection />
+  <FaqSection />
   <Contact />
 </Layout>
