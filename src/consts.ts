@@ -11,11 +11,20 @@ export const SITE = {
   locale: "es_AR",
 } as const;
 
+/**
+ * Canales de contacto.
+ *
+ * A propósito no hay email: los turnos se coordinan por WhatsApp o teléfono,
+ * que es donde la Dra. responde. Las casillas @drafernandez.com.ar quedaron
+ * sin uso y el dominio dejó de tener MX al migrar el DNS a Vercel, así que
+ * publicar una dirección ahí rebotaría los mensajes de los pacientes.
+ */
 export const CONTACT = {
   phone: "+5491128808666",
   phoneDisplay: "011 2880-8666",
   whatsapp: "5491128808666",
-  email: "",
+  // PENDIENTE: cargar el usuario de Instagram si la Dra. tiene cuenta
+  // profesional. Es una fuente importante de consultas en bariátrica.
   instagram: "",
 } as const;
 
