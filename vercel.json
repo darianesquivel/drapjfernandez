@@ -3,13 +3,9 @@
   "framework": "astro",
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
-
-  "//": "Astro construye en formato directorio (/centros/index.html). Con esto Vercel redirige /centros -> /centros/ y las URLs coinciden con el canonical y el sitemap.",
   "trailingSlash": true,
-
   "headers": [
     {
-      "//": "Los assets de Astro llevan hash en el nombre: si cambia el contenido cambia la URL, asi que se pueden cachear para siempre.",
       "source": "/_astro/(.*)",
       "headers": [
         {
@@ -19,7 +15,6 @@
       ]
     },
     {
-      "//": "Imagenes y logos: nombre fijo, se revalidan a diario.",
       "source": "/(.*)\\.(webp|png|jpg|jpeg|svg|ico)",
       "headers": [
         {
